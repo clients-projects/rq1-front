@@ -44,5 +44,9 @@ input {
     font-size: 16px !important;
     padding: 6px 21px  !important;
     border: 1px solid rgba(34,36,38,.15) !important;
-    color: rgba(156, 163, 175)
+    color: #b2b7be
+}
+
+input::placeholder{
+    color: #1652f0;
 }
