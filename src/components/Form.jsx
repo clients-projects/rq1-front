@@ -74,14 +74,14 @@ const Form = (props) => {
                 <span>Or sign in with</span>
             </div>
 
-            <div class='ui grid'>
+            <div className='ui grid'>
                 <div
-                    class='ui eight wide column'
+                    className='ui eight wide column'
                     style={{ paddingRight: '7px' }}
                 >
                     
                         <svg
-                            class='icon'
+                            className='icon'
                             xmlns='http://www.w3.org/2000/svg'
                             width='18'
                             height='18'
@@ -108,15 +108,15 @@ const Form = (props) => {
                                 ></path>
                             </g>
                         </svg>
-                        <span class='buttonText'>Google</span>
+                        <span className='buttonText'>Google</span>
                 </div>
                 <div
-                    class='ui eight wide column'
+                    className='ui eight wide column'
                     style={{ paddingRight: '7px' }}
                 >
-                    <div id='facebookSignin' class='customBtn'>
+                    <div id='facebookSignin' className='customBtn'>
                         <svg
-                            class='icon'
+                            className='icon'
                             xmlns='http://www.w3.org/2000/svg'
                             width='18'
                             height='18'
@@ -126,7 +126,7 @@ const Form = (props) => {
                                 fill='#2553B4'
                             ></path>
                         </svg>
-                        <span class='buttonText'>Facebook</span>
+                        <span className='buttonText'>Facebook</span>
                     </div>
                 </div>
             </div>
