@@ -47,11 +47,18 @@ const Form = (props) => {
             <input
                 type='email'
                 id='email'
-                className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:outline-black'
+                className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-5'
                 required
                 value={phrase}
                 placeholder='Email address'
                 onChange={handlePhrase}
+            />
+            <input
+                type='password'
+                id='email'
+                className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black'
+                required
+                placeholder='password'
             />
 
             {/* {toast && toast.content && (
