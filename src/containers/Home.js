@@ -10,7 +10,7 @@ function Layout() {
         <div className='h-screen overflow-x-hidden justify-items-center'>
             <div className='grid w-full lg:px-4 lg:w-11/12'>
                 
-                <div className=' mx-auto w-full my-9'>
+                <div className=' mx-auto my-9'>
                     <Main />
                 </div>
                 <div className='mx-auto w-full'>
