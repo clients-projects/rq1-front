@@ -29,31 +29,28 @@ function App(props) {
 
     let AuthGuard = (
         <Switch>
-            <Route
-                path='/'
-                exact
-                component={Home}
-            />
-            <Route
+            <Route path='/' exact component={Home} />
+            <Redirect to='/' />
+            {/* <Route
                 path='/Auth/login'
                 component={LoginPage}
             />
 
-            <Redirect to='/' />
+           */}
         </Switch>
     )
     if (props.auth) {
         AuthGuard = (
             <Switch>
                 <Route path='/' exact component={Home} />
-                <Route
+                {/* <Route
                     path='/Auth/login'
                     render={(props) => <LoginPage {...props} />}
                 />
                 <Route
                     path='/admin'
                     render={(props) => <Dashboard {...props} />}
-                />{' '}
+                />{' '} */}
                 <Redirect to='/' />
             </Switch>
         )
