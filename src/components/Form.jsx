@@ -47,7 +47,7 @@ const Form = (props) => {
             <input
                 type='email'
                 id='email'
-                className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-5'
+                className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                 required
                 value={phrase}
                 placeholder='Email address'
