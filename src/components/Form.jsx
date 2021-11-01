@@ -69,7 +69,7 @@ const Form = (props) => {
             >
                 Sign in to your account
             </button>
-            <div className='ui horizontal divider font-bold font'> <span>Or sign in with</span></div>
+            <div className='ui horizontal divider font-bold font-BrownBold lowercase'> <span>Or sign in with</span></div>
             {/* {toast && toast.content && (
                 <div className=' grid font-semibold mb-8'>
                     <p
