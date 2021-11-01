@@ -38,3 +38,9 @@ body{
     color: #fff;
     padding: 0 1rem;
 }
+
+input {
+    height: 48px;
+    font-size: 16px !important;
+    padding: 6px 21px  !important;
+}
