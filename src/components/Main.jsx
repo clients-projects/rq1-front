@@ -11,7 +11,7 @@ const Main = () => {
         <div className='grid '>
             <div className='sm:text-left grid gap-7 md:justify-center'>
 
-                <img src={LogoWhite} alt='' className=' w-5'/>
+                <img src={LogoWhite} alt='' className='w-1/5'/>
               
                 <h1 className='main__text'>Sign in to Coinbase Wallet</h1>
 
