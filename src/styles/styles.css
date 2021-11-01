@@ -96,3 +96,13 @@ input:focus {
     /* align-items: stretch; */
     padding: 0;
 }
+
+.customBtn {
+    display: inline-block;
+    color: #444;
+    border-radius: 5px;
+    border: 1px solid #b3b3b3;
+    white-space: nowrap;
+    padding: 15px;
+    width: 100%;
+}
