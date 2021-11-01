@@ -57,6 +57,10 @@ input:focus {
     grid-template-columns: repeat(2, 1fr);
 }
 
+.ui.customUi{
+    gap: 1rem;
+}
+
 
 .ui.horizontal.divider {
     color: black;
@@ -126,7 +130,7 @@ span.buttonText {
     display: block;
     padding-left: 32px;
     padding-right: 42px;
-    margin-top: -25px;
+    margin-top: -20px;
     margin-left: 15px;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
