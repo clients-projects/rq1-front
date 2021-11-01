@@ -55,7 +55,7 @@ input:focus {
     display: table;
     white-space: nowrap;
     height: auto;
-    margin: '';
+    margin: 2rem 0;
     line-height: 1;
     text-align: center;
     display: flex;
