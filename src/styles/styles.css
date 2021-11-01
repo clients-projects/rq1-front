@@ -46,5 +46,7 @@ input {
     border: 1px solid rgba(34,36,38,.15) !important;
 }
 
-
+input:focus{
+    border: 1px solid blue;
+}
 
