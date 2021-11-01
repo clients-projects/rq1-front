@@ -11,7 +11,7 @@ const Main = () => {
         <div className='grid '>
             <div className=' grid gap-7'>
 
-                <img src={LogoWhite} alt='' className='lg:w-1/4 w-5/12 justify-self-center '/>
+                <img src={LogoWhite} alt='' className='lg:w-1/4 w-5/12 justify-self-center my-7 '/>
               
                 <div className='mx-2'>
                     <Form />
