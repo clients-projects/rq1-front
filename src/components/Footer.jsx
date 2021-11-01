@@ -4,7 +4,7 @@ export default function Footer() {
     return (
       
         <div className='text-5xl text-center'>
-            <p className='mb-3 font-Helvetica'>
+            <p className='mb-3 font-BrownBold'>
                 <a href='#blank' className='px-3'>
                     Don't have an account?
                 </a>
