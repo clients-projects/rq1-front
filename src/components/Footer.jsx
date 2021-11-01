@@ -6,11 +6,7 @@ export default function Footer() {
             <p className='mb-3 font-Helvetica'>
                 <a href='#blank' className='px-3'>
                     Don't have an account?
-                </a>{' '}
-                &nbsp;&nbsp;&nbsp;
-                <a href='#blank'>Forgot password?</a>
-                &nbsp;&nbsp;&nbsp;
-                <a href='#blank'>Terms</a>
+                </a> &nbsp;&nbsp;&nbsp;<a href='#blank'>Forgot password?</a>&nbsp;&nbsp;&nbsp;<a href='#blank'>Terms</a>
                 <br />
             </p>
             <p className='font-Graphik'>
