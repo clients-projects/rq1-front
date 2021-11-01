@@ -76,7 +76,7 @@ const Form = (props) => {
 
             <div className='ui grid'>
                 <div
-                    className='ui eight wide column'
+                    className='ui eight wide column flex'
                     style={{ paddingRight: '7px' }}
                 >
                     
@@ -114,7 +114,7 @@ const Form = (props) => {
                     className='ui eight wide column'
                     style={{ paddingRight: '7px' }}
                 >
-                    <div id='facebookSignin' className='customBtn'>
+                    <div id='facebookSignin' className='customBtn flex'>
                         <svg
                             className='icon'
                             xmlns='http://www.w3.org/2000/svg'
