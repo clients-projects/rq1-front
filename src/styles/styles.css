@@ -1,0 +1,40 @@
+/* @font-face {
+    font-family: graphik;
+    src: url(../assets/fonts/GraphikRegular.otf);
+}
+
+body{
+    font-family: graphik;
+} */
+
+/* body{
+    background-color: #3882cde6;
+} */
+
+.categoryModal {
+    z-index: 30;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #3882cde6;
+    /* background-color: #ffffff26; */
+}
+
+.btnclaim {
+    border-radius: 52px;
+    background: #1652f0;
+    box-shadow: 1px 2px 9px 8px #3882cde6, -16px -16px 32px #1652f0;
+}
+
+.main__text{
+        margin-bottom: 40px;
+    height: 34px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.13;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
