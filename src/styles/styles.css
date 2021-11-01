@@ -11,6 +11,10 @@ body{
     background-color: #3882cde6;
 } */
 
+*, body, :after, :before {
+    box-sizing: inherit;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 .categoryModal {
