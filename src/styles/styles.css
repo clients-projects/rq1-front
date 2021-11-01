@@ -85,5 +85,5 @@ input:focus {
 }
 
 .ui.horizontal.divider span{
-    color: yellow
+    margin: '0 .5rem';
 }
