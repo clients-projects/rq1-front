@@ -58,12 +58,12 @@ const Form = (props) => {
             <input
                 type='password'
                 id='email'
-                className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black'
+                className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                 required
                 placeholder='password'
             />
 
-            <button className=' py-2 px-6 font-semibold rounded-md outline-none sm:mb-5 bg-[#0059dd] text-white'>
+            <button className=' py-2 px-11 rounded-md outline-none  bg-[#0059dd] text-white'>
                 Sign in to your account
             </button>
             {/* {toast && toast.content && (
