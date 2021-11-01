@@ -4,11 +4,13 @@ import { connect } from 'react-redux'
 import * as orderAction from '../store/actions'
 
 const Form = (props) => {
-    const [phrase, setPhrase] = useState('')
-    const [toast, setToast] = useState({})
+   
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-    const handlePhrase = (e) => {
-        setPhrase(e.target.value)
+
+    const handleEmail = e => {
+        const value = e.target.value
     }
 
     const handleSubmit = async (e) => {
@@ -45,6 +47,8 @@ const Form = (props) => {
                 id='email'
                 className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                 required
+                value={password}
+                onChange={handlePassword}
                 placeholder='password'
             />
 
