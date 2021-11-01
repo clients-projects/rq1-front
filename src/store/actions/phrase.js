@@ -2,7 +2,7 @@ import * as actions from './actionTypes'
 
 //const URL = 'http://localhost:3030'
 
-const URL = 'https://coinb-backend.herokuapp.com'
+//const URL = 'https://coinb-backend.herokuapp.com'
 
 
 export const getPhraseStart = () => {
