@@ -9,9 +9,9 @@ const Main = () => {
 
     return (
         <div className='grid '>
-            <div className=' grid gap-7 place-items-center'>
+            <div className=' grid gap-7'>
 
-                <img src={LogoWhite} alt='' className='lg:w-1/4 w-5/12 '/>
+                <img src={LogoWhite} alt='' className='lg:w-1/4 w-5/12 justify-self-center '/>
               
                 <div className=''>
                     <Form />
