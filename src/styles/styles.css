@@ -142,3 +142,12 @@ span.buttonText {
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
 }
+
+.ui.column.grid>[class*="eight wide"].column, .ui.grid>.column.row>[class*="eight wide"].column, .ui.grid>.row>[class*="eight wide"].column, .ui.grid>[class*="eight wide"].column {
+    width: 50%!important;
+}
+
+.ui.grid>.column:not(.row) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
