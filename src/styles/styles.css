@@ -11,6 +11,8 @@ body{
     background-color: #3882cde6;
 } */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 .categoryModal {
     z-index: 30;
     position: fixed;
@@ -105,4 +107,21 @@ input:focus {
     white-space: nowrap;
     padding: 15px;
     width: 100%;
+}
+
+span.buttonText {
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.4285em;
+    font-size: 15px !important;
+    -webkit-box-direction: normal;
+    color: #444;
+    white-space: nowrap;
+    box-sizing: inherit;
+    display: block;
+    padding-left: 32px;
+    padding-right: 42px;
+    margin-top: -25px;
+    margin-left: 15px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
 }
