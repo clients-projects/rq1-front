@@ -76,7 +76,7 @@ const Form = (props) => {
 
             <div className='ui grid'>
                 <div
-                    className='ui eight wide column flex'
+                    className='ui eight wide column customBtn flex'
                     style={{ paddingRight: '7px' }}
                 >
                     
