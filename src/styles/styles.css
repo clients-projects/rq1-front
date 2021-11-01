@@ -54,7 +54,7 @@ input:focus {
 
 /* .ui{
     display: flex;
-    grid-template-columns: repeat(2, 1fr);
+    grids-template-columns: repeat(2, 1fr);
 } */
 
 /* .ui.customUi{
@@ -143,16 +143,16 @@ span.buttonText {
     font-family: 'Roboto', sans-serif;
 }
 
-.ui.column.grid>[class*="eight wide"].column, .ui.grid>.column.row>[class*="eight wide"].column, .ui.grid>.row>[class*="eight wide"].column, .ui.grid>[class*="eight wide"].column {
+.ui.column.grids>[class*="eight wide"].column, .ui.grids>.column.row>[class*="eight wide"].column, .ui.grids>.row>[class*="eight wide"].column, .ui.grids>[class*="eight wide"].column {
     width: 50%!important;
 }
 
-.ui.grid>.column:not(.row) {
+.ui.grids>.column:not(.row) {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-.ui.grid>.column:not(.row), .ui.grid>.row>.column {
+.ui.grids>.column:not(.row), .ui.grids>.row>.column {
     position: relative;
     display: inline-block;
     width: 6.25%;
