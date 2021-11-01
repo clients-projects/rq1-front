@@ -74,9 +74,9 @@ const Form = (props) => {
                 <span>Or sign in with</span>
             </div>
 
-            <div className='ui grid'>
+            <div className='ui'>
                 <div
-                    className='ui eight wide column customBtn flex'
+                    className='customBtn flex'
                     style={{ paddingRight: '7px' }}
                 >
                     
