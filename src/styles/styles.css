@@ -84,6 +84,6 @@ input:focus {
     background-repeat: no-repeat;
 }
 
-.ui.horizontal.divider span{
-    margin-left: '1rem';
+span{
+    margin: 0 .6rem;
 }
