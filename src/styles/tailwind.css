@@ -23,8 +23,8 @@
         src: url(../assets/fonts/Helvetica.ttf);
     }
     @font-face {
-        font-family: BrownBold;
-        src: url(../assets/fonts/Brown/BrownBold.ttf);
+        font-family: BrownMedium;
+        src: url(../assets/fonts/Brown/BrownMedium.ttf);
     }
 
     h1 {
