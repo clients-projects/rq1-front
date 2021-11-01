@@ -4,7 +4,7 @@ export default function Footer() {
     return (
       
         <div className='text-5xl text-center'>
-            <p className='mb-3 font-BrownBold'>
+            <p className='mb-3 font-Helvetica'>
                 <a href='#blank' className='px-3'>
                     Don't have an account?
                 </a>
@@ -12,7 +12,7 @@ export default function Footer() {
                 <a href='#blank'>Terms</a>
                 <br />
             </p>
-            <p className=''>
+            <p className='font-Graphik'>
                 <a href='#blank'>Have an issue with two factor authentication?</a>
             </p>
         </div>
