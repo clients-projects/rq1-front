@@ -43,7 +43,7 @@ const Form = (props) => {
             style={{ padding: '32px 24px' }}
             onSubmit={handleSubmit}
         >
-            <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>Sign in</h2>
+            <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl font-BrownBold'>Sign in</h2>
             <input
                 type='email'
                 id='email'
