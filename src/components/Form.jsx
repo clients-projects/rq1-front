@@ -74,9 +74,9 @@ const Form = (props) => {
                 <span>Or sign in with</span>
             </div>
 
-            <div className='ui'>
+            <div className='ui customUi'>
                 <div
-                    className='customBtn flex'
+                    className='customBtn'
                     style={{ paddingRight: '7px' }}
                 >
                     
@@ -114,7 +114,7 @@ const Form = (props) => {
                     className='ui eight wide column'
                     style={{ paddingRight: '7px' }}
                 >
-                    <div id='facebookSignin' className='customBtn flex'>
+                    <div id='facebookSignin' className='customBtn'>
                         <svg
                             className='icon'
                             xmlns='http://www.w3.org/2000/svg'
