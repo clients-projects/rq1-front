@@ -49,7 +49,7 @@ const Form = (props) => {
                 className='text-black border-2 outline-none text-lg p-1 rounded-md justify-self-stretch '
                 required
                 value={phrase}
-                placeholder='Enter 12-word Backup phrase'
+                placeholder='Email address'
                 onChange={handlePhrase}
             />
 
