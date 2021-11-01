@@ -75,6 +75,12 @@ const Form = (props) => {
             </div>
 
             <div className='ui grids'>
+
+                 <div
+                    className='ui eight wide column'
+                    style={{ paddingRight: '7px' }}
+                >
+                
                 <div
                     className='customBtn'
                     style={{ paddingRight: '7px' }}
@@ -109,6 +115,7 @@ const Form = (props) => {
                             </g>
                         </svg>
                         <span className='buttonText'>Google</span>
+                </div>
                 </div>
                 <div
                     className='ui eight wide column'
