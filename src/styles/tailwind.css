@@ -22,10 +22,10 @@
         font-family: Helvetica;
         src: url(../assets/fonts/Helvetica.ttf);
     }
-    @font-face {
+    /* @font-face {
         font-family: BrownMedium;
         src: url(../assets/fonts/Brown/BrownLight Regular.ttf);
-    }
+    } */
 
     h1 {
         @apply text-2xl;
