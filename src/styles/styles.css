@@ -11,8 +11,6 @@ body{
     background-color: #3882cde6;
 } */
 
-
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 .categoryModal {
@@ -54,15 +52,14 @@ input:focus {
     border: 1px solid blue;
 }
 
-.ui{
+/* .ui{
     display: flex;
     grid-template-columns: repeat(2, 1fr);
-}
+} */
 
-.ui.customUi{
+/* .ui.customUi{
     gap: 1rem;
-}
-
+} */
 
 .ui.horizontal.divider {
     color: black;
@@ -102,12 +99,20 @@ input:focus {
 .ui.horizontal.divider span {
     margin: 0 0.6rem;
 }
-.ui.grid {
+.ui.grids {
     display: flex;
     color: #444;
     flex-wrap: wrap;
-
-    /* align-items: stretch; */
+    margin: 0 -1rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
     padding: 0;
 }
 
