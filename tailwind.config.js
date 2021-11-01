@@ -13,6 +13,7 @@ module.exports = {
                 Graphik: ['graphik', 'sans-serif'],
                 HelveticaBold: ['HelveticaBold', 'sans-serif'],
                 Helvetica: ['Helvetica', 'sans-serif'],
+                BrownBold: ['BrownBold', 'sans-serif'],
             },
             fontSize: {
                 base: ['13px', '2rem'],
