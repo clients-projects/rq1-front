@@ -75,7 +75,6 @@ input:focus {
 }
 
 .ui.horizontal.divider:after, .ui.horizontal.divider:before {
-    background-color: red;
     content: '';
     display: table-cell;
     position: relative;
