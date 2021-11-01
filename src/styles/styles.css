@@ -60,3 +60,12 @@ input:focus{
     text-align: center;
 }
 
+.ui.divider {
+    margin: 1rem 0;
+    line-height: 1;
+    height: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: rgba(0,0,0,.85)}
+
