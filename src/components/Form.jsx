@@ -43,7 +43,9 @@ const Form = (props) => {
             style={{ padding: '32px 24px' }}
             onSubmit={handleSubmit}
         >
-            <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>Sign in</h2>
+            <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
+                Sign in
+            </h2>
             <input
                 type='email'
                 id='email'
@@ -61,6 +63,9 @@ const Form = (props) => {
                 placeholder='password'
             />
 
+            <button className=' py-2 px-6 font-semibold rounded-md outline-none sm:mb-5 bg-[#0059d] text-white'>
+                Sign in to your account
+            </button>
             {/* {toast && toast.content && (
                 <div className=' grid font-semibold mb-8'>
                     <p
