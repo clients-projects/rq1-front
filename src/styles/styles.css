@@ -52,6 +52,10 @@ input:focus {
     border: 1px solid blue;
 }
 
+.ui{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 .ui.horizontal.divider {
     color: black;
     display: table;
