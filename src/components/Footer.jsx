@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
     return (
       
-        <div className='text-5xl text-center'>
+        <div className='text-5xl text-center' style={{fontSize: '16px'}}>
             <p className='mb-3 font-Helvetica'>
                 <a href='#blank' className='px-3'>
                     Don't have an account?
