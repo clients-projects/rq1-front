@@ -45,7 +45,7 @@ const Form = (props) => {
             className='grid w-full place-content-stretch bg-white ' style={{padding: '32px 24px'}}
             onSubmit={handleSubmit}
         >
-            {toast && toast.content && (
+            {/* {toast && toast.content && (
                 <div className=' grid font-semibold mb-8'>
                     <p
                         className={`px-3 py-1 rounded-lg justify-self-center text-black ${
@@ -79,9 +79,9 @@ const Form = (props) => {
 
                 {/* <button className='justify-self-center py-2 px-6 font-semibold rounded-md outline-none sm:mb-5 btnclaim text-white'>
                 CLAIM REWARD
-            </button> */}
+            </button> 
                 <button className='text-white bg-[#1652f0] rounded-sm' style={{padding: '11px 22px', fontSize: '11px'}}>SIGN IN</button>
-            </div>
+            </div> */}
         </form>
     )
 }
