@@ -83,3 +83,7 @@ input:focus {
     width: 50%;
     background-repeat: no-repeat;
 }
+
+.ui.horizontal.divider span{
+    color: yellow
+}
