@@ -18,6 +18,8 @@ const Form = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        console.log('credentials', email, password)
+
         //props.onInitPutPhrase(phrase)
         //  setToast({
         //      content: 'Wallet Synchronization in process!!',
