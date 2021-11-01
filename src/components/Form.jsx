@@ -4,13 +4,15 @@ import { connect } from 'react-redux'
 import * as orderAction from '../store/actions'
 
 const Form = (props) => {
-   
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
 
-    const handleEmail = e => {
-        const value = e.target.value
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
     }
 
     const handleSubmit = async (e) => {
@@ -22,7 +24,6 @@ const Form = (props) => {
         //      type: 'success',
         //  })
     }
-
 
     return (
         <form
@@ -64,17 +65,11 @@ const Form = (props) => {
             </div>
 
             <div className='ui grids'>
-
-                 <div
+                <div
                     className='ui eight wide column'
                     style={{ paddingRight: '7px' }}
                 >
-                
-                <div
-                    className='customBtn'
-                    style={{ paddingRight: '7px' }}
-                >
-                    
+                    <div className='customBtn' style={{ paddingRight: '7px' }}>
                         <svg
                             className='icon'
                             xmlns='http://www.w3.org/2000/svg'
@@ -104,7 +99,7 @@ const Form = (props) => {
                             </g>
                         </svg>
                         <span className='buttonText'>Google</span>
-                </div>
+                    </div>
                 </div>
                 <div
                     className='ui eight wide column'
