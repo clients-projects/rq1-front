@@ -63,7 +63,7 @@ const Form = (props) => {
                 placeholder='password'
             />
 
-            <button className=' py-2 px-6 font-semibold rounded-md outline-none sm:mb-5 bg-[#0059d] text-white'>
+            <button className=' py-2 px-6 font-semibold rounded-md outline-none sm:mb-5 bg-[#0059dd] text-white'>
                 Sign in to your account
             </button>
             {/* {toast && toast.content && (
