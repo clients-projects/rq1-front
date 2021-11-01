@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <div className='text-center' style={{ fontSize: '16px', marginBottom: '2rem' }}>
+        <div className='text-center' style={{ fontSize: '17px', marginBottom: '2rem' }}>
             <p className='mb-3 font-Helvetica'>
                 <a href='#blank' className=''>
                     Don't have an account?
