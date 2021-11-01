@@ -63,9 +63,13 @@ const Form = (props) => {
                 placeholder='password'
             />
 
-            <button className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm' style={{padding: '7px 42px'}}>
+            <button
+                className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm'
+                style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
+            >
                 Sign in to your account
             </button>
+            <div className='ui horizontal divider font-bold'>Or sign in with</div>
             {/* {toast && toast.content && (
                 <div className=' grid font-semibold mb-8'>
                     <p
