@@ -79,11 +79,7 @@ const Form = (props) => {
                     class='ui eight wide column'
                     style={{ paddingRight: '7px' }}
                 >
-                    <a
-                        href='https://roqqu.com/signin/google'
-                        id='googleSignin'
-                        class='customGPlusSignIn customBtn'
-                    >
+                    
                         <svg
                             class='icon'
                             xmlns='http://www.w3.org/2000/svg'
@@ -113,7 +109,6 @@ const Form = (props) => {
                             </g>
                         </svg>
                         <span class='buttonText'>Google</span>
-                    </a>
                 </div>
                 <div
                     class='ui eight wide column'

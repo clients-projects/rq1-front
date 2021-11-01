@@ -83,7 +83,16 @@ input:focus {
     background-repeat: no-repeat;
 }
 
-span{
+.ui.horizontal.divider span{
     margin: 0 .6rem;
-
 }
+.ui.grid {
+    
+    display: flex;
+   
+    flex-wrap: wrap;
+  
+   /* align-items: stretch; */
+    padding: 0;
+}
+
