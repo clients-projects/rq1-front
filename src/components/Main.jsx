@@ -9,7 +9,7 @@ const Main = () => {
 
     return (
         <div className='grid '>
-            <div className=' grid gap-7 md:justify-center'>
+            <div className=' grid gap-7 justify-center'>
 
                 <img src={LogoWhite} alt='' className='lg:w-1/4 w-5/12 '/>
               
