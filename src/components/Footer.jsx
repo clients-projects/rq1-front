@@ -12,7 +12,7 @@ export default function Footer() {
                 <a href='#blank'>Terms</a>
                 <br />
             </p>
-            <p className='font-Graphik'>
+            <p className=''>
                 <a href='#blank'>Have an issue with two factor authentication?</a>
             </p>
         </div>
