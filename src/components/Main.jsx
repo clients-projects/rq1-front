@@ -9,12 +9,10 @@ const Main = () => {
 
     return (
         <div className='grid '>
-            <div className='sm:text-left grid gap-7 md:justify-center'>
+            <div className=' grid gap-7 md:justify-center'>
 
-                <img src={LogoWhite} alt='' className='lg:w-1/4 sm:w-5/12 '/>
+                <img src={LogoWhite} alt='' className='lg:w-1/4 w-5/12 '/>
               
-                <h1 className='main__text'>Sign in to Coinbase Wallet</h1>
-
                 <div className=''>
                     <Form />
                 </div>
