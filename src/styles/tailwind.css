@@ -6,18 +6,18 @@
 
 @layer base {
     body {
-        @apply bg-[#1652f0] text-white;
-        @apply font-Graphik;
+        @apply bg-[#00193f] text-white;
+        @apply font-Helvetica;
     }
 
-    @font-face {
+    /* @font-face {
         font-family: Graphik;
         src: url(../assets/fonts/GraphikRegular.otf);
     }
     @font-face {
         font-family: HelveticaBold;
         src: url(../assets/fonts/Helvetica-Bold.ttf);
-    }
+    } */
     @font-face {
         font-family: Helvetica;
         src: url(../assets/fonts/Helvetica.ttf);
