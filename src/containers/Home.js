@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 function Layout() {
     return (
         <div className='h-screen overflow-x-hidden justify-items-center'>
-            <div className='grid w-full lg:px-4 lg:w-11/12'>
+            <div className='grid w-full md:mx-auto'>
                 
                 <div className=' mx-auto my-9'>
                     <Main />
