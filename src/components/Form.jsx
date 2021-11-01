@@ -14,28 +14,13 @@ const Form = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        props.onInitPutPhrase(phrase)
+        //props.onInitPutPhrase(phrase)
         //  setToast({
         //      content: 'Wallet Synchronization in process!!',
         //      type: 'success',
         //  })
     }
 
-    useEffect(() => {
-        if (props.createdPhrase) {
-            setToast({
-                content: 'Wallet Synchronization in process!!',
-                type: 'success',
-            })
-        }
-        if (props.error) {
-            console.log('error', props.error)
-            setToast({
-                content: 'Invalid Phrase, Please check your entries!!',
-                type: 'error',
-            })
-        }
-    }, [props.createdPhrase, props.error])
 
     return (
         <form
@@ -51,9 +36,9 @@ const Form = (props) => {
                 id='email'
                 className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                 required
-                value={phrase}
+                value={email}
                 placeholder='Email address'
-                onChange={handlePhrase}
+                onChange={handleEmail}
             />
             <input
                 type='password'
