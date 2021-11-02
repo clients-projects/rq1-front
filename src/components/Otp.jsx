@@ -16,13 +16,21 @@ export default function Otp() {
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
                 <div className='w-full grid justify-center justify-items-center'>
-                    <img class="signin-logo" width="100rm" alt="roqqu logo" src={padlock} className='w-2/4 my-8'/>
+                    <img
+                        class='signin-logo'
+                        width='100rm'
+                        alt='roqqu logo'
+                        src={padlock}
+                        className='w-2/4 my-8'
+                    />
                     <div className=' h-64 py-3 rounded text-center'>
-                        <h1 className='text-2xl font-bold'>OTP Verification</h1>
+                        <h1 className='text-2xl font-bold'>Enter Pin</h1>
                         <div className='flex flex-col mt-4'>
                             {' '}
-                            <span>Enter the OTP you received at</span>{' '}
-                            <span className='font-bold'>+91 ******876</span>{' '}
+                            <span>
+                                For your security, PIN is required to sign into
+                                and make transactions on Roqqu wallet
+                            </span>{' '}
                         </div>
 
                         <OtpInput
@@ -33,7 +41,6 @@ export default function Otp() {
                             containerStyle='pinlogin'
                         />
 
-                       
                         <div className='flex justify-center text-center mt-5'>
                             {' '}
                             <a className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
