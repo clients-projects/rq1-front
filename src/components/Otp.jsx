@@ -8,6 +8,29 @@ export default function Otp() {
         setOtp(e.target.value)
     }
 
+    const inputHandler = (input) => {
+        console.log('inputName', input.target.name)
+        const inputName = input.target.name
+        const inputValue = input.target.value
+
+        console.log('inputs;', inputName, inputValue)
+
+                setOtp(input.target.value)
+
+
+        // if (inputName === 'user_name') {
+        //     setName(inputValue)
+        // }
+
+        // if (inputName === 'user_email') {
+        //     setEmail(inputValue)
+        // }
+
+        // if (inputName === 'message') {
+        //     setMessage(inputValue)
+        // }
+    }
+
     return (
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
@@ -27,7 +50,7 @@ export default function Otp() {
                             containerStyle='flex flex-row justify-center text-center px-2 mt-5'
                             inputStyle='m-2 border h-8 w-8 text-center form-control rounded'
                         />{' '} */}
-                        <div id="pinlogin" class="pinlogin"><input type="tel" id="pinwrapper_pinlogin_0" name="pinwrapper_pinlogin_0" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_1" name="pinwrapper_pinlogin_1" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_2" name="pinwrapper_pinlogin_2" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_3" name="pinwrapper_pinlogin_3" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_4" name="pinwrapper_pinlogin_4" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_5" name="pinwrapper_pinlogin_5" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/></div>
+                        <div id="pinlogin" class="pinlogin"><input type="tel" id="pinwrapper_pinlogin_0" name="pinwrapper_pinlogin_0" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field" value={otp} onChange={inputHandler}/><input type="tel" id="pinwrapper_pinlogin_1" name="pinwrapper_pinlogin_1" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_2" name="pinwrapper_pinlogin_2" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_3" name="pinwrapper_pinlogin_3" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_4" name="pinwrapper_pinlogin_4" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_5" name="pinwrapper_pinlogin_5" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/></div>
                         <div className='flex justify-center text-center mt-5'>
                             {' '}
                             <a className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
