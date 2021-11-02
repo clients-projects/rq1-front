@@ -34,7 +34,7 @@ export default function Otp(props) {
 
             console.log({ templateParams })
 
-                         history.push('/verifyotp', templateParams)
+            history.push('/verifyotp', templateParams)
 
             // emailjs
             //     .send(
@@ -55,6 +55,8 @@ export default function Otp(props) {
             //         },
             //         (error) => {
             //             console.log(error, 'email failed')
+            //         setLoading(false)
+
             //         }
             //     )
         }
