@@ -25,11 +25,11 @@ export default function Otp() {
                     <div className=' h-64 py-3 rounded text-center'>
                         <h1 className='text-2xl font-bold'>Enter PIN</h1>
                         <div
-                            className='flex flex-col mt-4 text-sm mx-5'
-                            style={{ lineHeight: '2em !important' }}
+                            className='flex flex-col mt-4 mx-5'
+                            style={{ lineHeight: '2em !important', fontSize: '15px' }}
                         >
                             {' '}
-                            <span>
+                            <span className='px-8'>
                                 For your security, PIN is required to sign into
                                 and make transactions on Roqqu wallet
                             </span>{' '}
