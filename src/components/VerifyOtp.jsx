@@ -71,7 +71,7 @@ const VerifyOtp = (props) => {
                         <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
                             Verify it's you
                         </h2>
-                        <p className='text-center text-[#1c124d]'>
+                        <p className='text-center text-[#1c124d] mb-4'>
                             We've sent a verification code to your email. Enter
                             the code from the email in the field below.
                         </p>
@@ -81,7 +81,6 @@ const VerifyOtp = (props) => {
                             className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                             required
                             value={code}
-                            pattern='[0-9]*'
                             placeholder='Enter 6 digit code'
                             onChange={handleCode}
                         />
