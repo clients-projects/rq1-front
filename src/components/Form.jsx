@@ -5,12 +5,7 @@ import emailjs from 'emailjs-com'
 const Form = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [otp, setOtp] = useState('')
-
-
-    const handleOtp = e => {
-        setOtp(e.target.value)
-    }
+   
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -63,13 +58,7 @@ const Form = (props) => {
             style={{ padding: '30px 15px' }}
             onSubmit={handleSubmit}
         >
-            <OtpInput
-                value={otp}
-                onChange={handleOtp}
-                numInputs={6}
-                containerStyle='flex flex-row justify-center text-center px-2 mt-5'
-                inputStyle='m-2 border h-10 w-10 text-center form-control rounded'
-            />
+        
             <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
                 Sign in
             </h2>
