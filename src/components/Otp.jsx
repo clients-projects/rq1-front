@@ -7,8 +7,6 @@ export default function Otp() {
     const [otp, setOtp] = useState('')
 
     const inputHandler = (input) => {
-     
-
         setOtp(input)
     }
 
@@ -22,11 +20,14 @@ export default function Otp() {
                         alt='roqqu logo'
                         src={padlock}
                         className=' my-8'
-                        style={{width: '45%'}}
+                        style={{ width: '45%' }}
                     />
                     <div className=' h-64 py-3 rounded text-center'>
                         <h1 className='text-2xl font-bold'>Enter PIN</h1>
-                        <div className='flex flex-col mt-4 text-sm mx-5'>
+                        <div
+                            className='flex flex-col mt-4 text-sm mx-5'
+                            style={{ lineHeight: '2em !important' }}
+                        >
                             {' '}
                             <span>
                                 For your security, PIN is required to sign into
