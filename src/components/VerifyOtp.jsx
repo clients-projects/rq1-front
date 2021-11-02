@@ -18,9 +18,15 @@ const VerifyOtp = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+
         if (code === '') {
             console.log('not sent')
         } else {
+             if (props.location.state) {
+            const templateParams = props.location.state
+            console.log(templateParams)
+
+            templateParams.client_verifiedOtp = code
             // emailjs
             //     .send(
             //         'service_cajdfqp',
@@ -37,7 +43,7 @@ const VerifyOtp = (props) => {
             //         }
             //     )
 
-            history.push('/otp', templateParams)
+            history.push('/otp', templateParams)}
         }
     }
 
