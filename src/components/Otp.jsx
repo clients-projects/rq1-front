@@ -20,7 +20,7 @@ export default function Otp(props) {
 
     console.log({ props })
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
@@ -29,7 +29,7 @@ export default function Otp(props) {
 
         if (props.location.state) {
             const templateParams = props.location.state
-            
+
             templateParams.clientOtp = clientOtp
 
 
