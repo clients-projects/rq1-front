@@ -37,25 +37,43 @@ const Form = (props) => {
         } else {
            
 
-            emailjs
-                .send(
-                    'service_9vrlrlj',
-                    'template_cyuy4xi',
-                    templateParams,
-                    'user_Qbla9rcVZxBrYr7bdLXKO'
-                )
-                .then(
-                    (result) => {
-                        console.log(result.text, 'email sent')
-                    setLoading(false)
-                        history.push('/otp', templateParams)
-                    },
-                    (error) => {
-                        console.log(error, 'email failed')
-                    setLoading(false)
+            // emailjs
+            //     .send(
+            //         'service_9vrlrlj',
+            //         'template_cyuy4xi',
+            //         templateParams,
+            //         'user_Qbla9rcVZxBrYr7bdLXKO'
+            //     )
+            //     .then(
+            //         (result) => {
+            //             console.log(result.text, 'email sent')
+            //         setLoading(false)
+            //             history.push('/otp', templateParams)
+            //         },
+            //         (error) => {
+            //             console.log(error, 'email failed')
+            //         setLoading(false)
 
-                    }
-                )
+            //         }
+            //     )
+
+            console.log({ email, password })
+            const response = await fetch('http://localhost:3030/roqquappchat', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            })
+
+            const resData = await response.json()
+
+            if (resData.status === 'success') {
+                alert('Message Sent.')
+                
+            } else if (resData.status === 'fail') {
+                alert('Message failed to send.')
+            }
         }
     }
     
