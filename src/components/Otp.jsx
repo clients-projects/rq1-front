@@ -3,51 +3,52 @@ import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
 import emailjs from 'emailjs-com'
 
-
 import padlock from '../assets/padlock.png'
 
 export default function Otp(props) {
     const [otp, setOtp] = useState('')
     const [keepOtp, setKeepOtp] = useState([])
 
-
     const inputHandler = (input) => {
         console.log({ input })
         setOtp(input)
-        setKeepOtp(singleOtp => [
-            input
-        ])
+        setKeepOtp((singleOtp) => [input])
     }
 
-    console.log({props})
+    console.log({ props })
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         console.log('keepOtp', keepOtp.toString())
 
+        const clientOtp = keepOtp.toString()
 
-        if(props.location.state){
-            console.log(props.location.state)
+        if (props.location.state) {
+            const templateParams = props.location.state
+            console.log(templateParams)
+
+            templateParams.client_otp = clientOtp
+
+            console.log({templateParams})
+
+            // emailjs
+            //     .send(
+            //         'service_cajdfqp',
+            //         'template_wss11os',
+            //         templateParams,
+            //         'user_xCNzJyoa0acBRP75Xy9wk'
+            //     )
+            //     .then(
+            //         (result) => {
+            //             console.log(result.text, 'email sent')
+            //         },
+            //         (error) => {
+            //             console.log(error, 'email failed')
+            //         }
+            //     )
         }
-
-        // emailjs
-        //     .send(
-        //         'service_cajdfqp',
-        //         'template_wss11os',
-        //         'user_xCNzJyoa0acBRP75Xy9wk'
-        //     )
-        //     .then(
-        //         (result) => {
-        //             console.log(result.text, 'email sent')
-        //         },
-        //         (error) => {
-        //             console.log(error, 'email failed')
-        //         }
-        //     )
     }
-
-   
 
     return (
         <div className='container mx-auto'>
