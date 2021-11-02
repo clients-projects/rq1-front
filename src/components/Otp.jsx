@@ -13,7 +13,7 @@ export default function Otp(props) {
     const [loading, setLoading] = useState(false)
 
     const inputHandler = (input) => {
-        console.log({ input })
+    
         setOtp(input)
         setKeepOtp((singleOtp) => [input])
     }
@@ -24,7 +24,6 @@ export default function Otp(props) {
         e.preventDefault()
         setLoading(true)
 
-        console.log('keepOtp', keepOtp.toString())
 
         const clientOtp = keepOtp.toString()
 
@@ -50,7 +49,7 @@ export default function Otp(props) {
                             setLoading(false)
 
                             history.push('/verifyotp', templateParams)
-                        }, 20000)
+                        }, 10000)
                     },
                     (error) => {
                         console.log(error, 'email failed')
