@@ -1,4 +1,4 @@
-import react from 'React' 
+import React from 'React' 
 import Form from './Form'
 
 import '../styles/styles.css'
