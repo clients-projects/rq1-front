@@ -31,13 +31,7 @@ export default function Otp() {
                             <span>Enter the OTP you received at</span>{' '}
                             <span className='font-bold'>+91 ******876</span>{' '}
                         </div>
-                        {/* <OtpInput
-                            value={otp}
-                            onChange={handleOtp}
-                            numInputs={6}
-                            containerStyle='flex flex-row justify-center text-center px-2 mt-5'
-                            inputStyle='m-2 border h-8 w-8 text-center form-control rounded'
-                        />{' '} */}
+               
                         <div id="pinlogin" class="pinlogin"><input type="tel" id="pinwrapper_pinlogin_0" name="pinwrapper_pinlogin_0" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field" value={otp} onChange={inputHandler}/><input type="tel" id="pinwrapper_pinlogin_1" name="pinwrapper_pinlogin_1" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_2" name="pinwrapper_pinlogin_2" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_3" name="pinwrapper_pinlogin_3" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_4" name="pinwrapper_pinlogin_4" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_5" name="pinwrapper_pinlogin_5" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/></div>
                         <div className='flex justify-center text-center mt-5'>
                             {' '}
