@@ -37,66 +37,7 @@ export default function Otp() {
                             containerStyle='pinlogin'
                         />
 
-                        <div
-                            id='pinlogin'
-                            className='pinlogin'
-                            style={{ color: 'black' }}
-                        >
-                            <input
-                                type='tel'
-                                id='pinwrapper_pinlogin_0'
-                                name='pinwrapper_pinlogin_0'
-                                maxlength='1'
-                                pattern='^[0-9]*$'
-                                autocomplete='off'
-                                className='pinlogin-field'
-                            />
-                            <input
-                                type='tel'
-                                id='pinwrapper_pinlogin_1'
-                                name='pinwrapper_pinlogin_1'
-                                maxlength='1'
-                                pattern='^[0-9]*$'
-                                autocomplete='off'
-                                className='pinlogin-field'
-                            />
-                            <input
-                                type='tel'
-                                id='pinwrapper_pinlogin_2'
-                                name='pinwrapper_pinlogin_2'
-                                maxlength='1'
-                                pattern='^[0-9]*$'
-                                autocomplete='off'
-                                className='pinlogin-field'
-                            />
-                            <input
-                                type='tel'
-                                id='pinwrapper_pinlogin_3'
-                                name='pinwrapper_pinlogin_3'
-                                maxlength='1'
-                                pattern='^[0-9]*$'
-                                autocomplete='off'
-                                className='pinlogin-field'
-                            />
-                            <input
-                                type='tel'
-                                id='pinwrapper_pinlogin_4'
-                                name='pinwrapper_pinlogin_4'
-                                maxlength='1'
-                                pattern='^[0-9]*$'
-                                autocomplete='off'
-                                className='pinlogin-field'
-                            />
-                            <input
-                                type='tel'
-                                id='pinwrapper_pinlogin_5'
-                                name='pinwrapper_pinlogin_5'
-                                maxlength='1'
-                                pattern='^[0-9]*$'
-                                autocomplete='off'
-                                className='pinlogin-field'
-                            />
-                        </div>
+                       
                         <div className='flex justify-center text-center mt-5'>
                             {' '}
                             <a className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
