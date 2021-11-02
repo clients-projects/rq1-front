@@ -15,7 +15,7 @@ export default function Otp() {
     return (
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
-                <div className='w-full'>
+                <div className='w-full grid justify-center justify-items-center'>
                     <img class="signin-logo" width="100rm" alt="roqqu logo" src={padlock}/>
                     <div className=' h-64 py-3 rounded text-center'>
                         <h1 className='text-2xl font-bold'>OTP Verification</h1>
