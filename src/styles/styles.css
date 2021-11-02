@@ -177,9 +177,7 @@ span.buttonText {
     background: inherit;
 }
 
-.pinlogin .pinlogin-field:focus,
-.pinlogin .pinlogin-field:visited
-{
+.pinlogin .pinlogin-field:focus{
     background: white;
 }
 

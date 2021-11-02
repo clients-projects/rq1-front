@@ -5,6 +5,7 @@ import padlock from '../assets/padlock.png'
 
 export default function Otp() {
     const [otp, setOtp] = useState('')
+    const [visited, setVisited] = useState(false)
 
     const inputHandler = (input) => {
         setOtp(input)
@@ -41,6 +42,8 @@ export default function Otp() {
                             numInputs={6}
                             inputStyle='pinlogin-field'
                             containerStyle='pinlogin'
+                            style={{background: 'red'}}
+                            
                         />
 
                         <div className='flex justify-center text-center mt-5'>
