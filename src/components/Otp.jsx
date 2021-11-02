@@ -56,7 +56,7 @@ export default function Otp(props) {
                 
                 history.push('/verifyotp', templateParams)
         
-            }, 3000)
+            }, 20000)
         }
     }
 

