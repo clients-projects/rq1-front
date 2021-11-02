@@ -71,7 +71,7 @@ const VerifyOtp = (props) => {
                         <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
                             Verify it's you
                         </h2>
-                        <p className='text-center text-[#1c124d] mb-4'>
+                        <p className='text-center text-[#1c124d] my-4'>
                             We've sent a verification code to your email. Enter
                             the code from the email in the field below.
                         </p>
@@ -86,8 +86,8 @@ const VerifyOtp = (props) => {
                         />
 
                         <button
-                            className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm'
-                            style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
+                            className=' rounded-md outline-none  bg-[#0059dd] text-white'
+                            style={{ padding: '.5rem 3rem', lineHeight: 2.5, fontSize: '15px' }}
                         >
                             {loading ? 'loading...' : 'Verify'}
                         </button>
