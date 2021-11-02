@@ -1,25 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import OtpInput from 'react-otp-input'
 
 import padlock from '../assets/padlock.png'
 
 export default function Otp() {
     const [otp, setOtp] = useState('')
+    const [keepOtp, setKeepOtp] = useState([])
 
 
-    const storeOtp = []
     const inputHandler = (input) => {
         console.log({ input })
         setOtp(input)
-        storeOtp.push(input)
-        console.log({storeOtp})
+        setKeepOtp(singleOtp => [
+            ...singleOtp,
+            input
+        ])
     }
 
     const handleSubmit = e => {
         e.preventDefault()
 
-        console.log({storeOtp})
+        console.log({keepOtp})
     }
+
+    useEffect(() => {
+
+    }, [])
 
     return (
         <div className='container mx-auto'>
