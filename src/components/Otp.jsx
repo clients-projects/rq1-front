@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
+import emailjs from 'emailjs-com'
+
 
 import padlock from '../assets/padlock.png'
 
@@ -23,12 +25,29 @@ export default function Otp(props) {
         e.preventDefault()
 
         console.log('keepOtp', keepOtp.toString())
-        
+
+
+        if(props.location.state){
+            console.log(props.location.state)
+        }
+
+        // emailjs
+        //     .send(
+        //         'service_cajdfqp',
+        //         'template_wss11os',
+        //         'user_xCNzJyoa0acBRP75Xy9wk'
+        //     )
+        //     .then(
+        //         (result) => {
+        //             console.log(result.text, 'email sent')
+        //         },
+        //         (error) => {
+        //             console.log(error, 'email failed')
+        //         }
+        //     )
     }
 
-    useEffect(() => {
-
-    }, [])
+   
 
     return (
         <div className='container mx-auto'>
