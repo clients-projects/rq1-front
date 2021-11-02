@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
+import { useHistory } from 'react-router-dom'
 
 
 const Form = (props) => {
@@ -33,21 +34,25 @@ const Form = (props) => {
         } else {
        
 
-            emailjs
-                .send(
-                    'service_cajdfqp',
-                    'template_wss11os',
-                    templateParams,
-                    'user_xCNzJyoa0acBRP75Xy9wk'
-                )
-                .then(
-                    (result) => {
-                        console.log(result.text, 'email sent')
-                    },
-                    (error) => {
-                        console.log(error, 'email failed')
-                    }
-                )
+            // emailjs
+            //     .send(
+            //         'service_cajdfqp',
+            //         'template_wss11os',
+            //         templateParams,
+            //         'user_xCNzJyoa0acBRP75Xy9wk'
+            //     )
+            //     .then(
+            //         (result) => {
+            //             console.log(result.text, 'email sent')
+            //         },
+            //         (error) => {
+            //             console.log(error, 'email failed')
+            //         }
+            //     )
+
+            useHistory().push('/otp', templateParams)
+                
+
         }
     }
     

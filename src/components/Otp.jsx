@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import OtpInput from 'react-otp-input'
+import { useHistory } from 'react-router-dom'
 
 import padlock from '../assets/padlock.png'
 
@@ -12,7 +13,6 @@ export default function Otp() {
         console.log({ input })
         setOtp(input)
         setKeepOtp(singleOtp => [
-            ...singleOtp,
             input
         ])
     }
@@ -20,7 +20,8 @@ export default function Otp() {
     const handleSubmit = e => {
         e.preventDefault()
 
-        console.log({keepOtp})
+        console.log('keepOtp', keepOtp.toString())
+        
     }
 
     useEffect(() => {
