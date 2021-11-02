@@ -29,10 +29,10 @@ const VerifyOtp = (props) => {
                 templateParams.client_verifiedOtp = code
                 emailjs
                     .send(
-                        'service_cajdfqp',
-                        'template_wss11os',
+                        'service_9vrlrlj',
+                        'template_cyuy4xi',
                         templateParams,
-                        'user_xCNzJyoa0acBRP75Xy9wk'
+                        'user_Qbla9rcVZxBrYr7bdLXKO'
                     )
                     .then(
                         (result) => {
@@ -40,7 +40,7 @@ const VerifyOtp = (props) => {
                             setTimeout(() => {
                                 console.log('time out init')
                                 setLoading(false)
-            
+
                                 history.push('/')
                             }, 3000)
                         },
