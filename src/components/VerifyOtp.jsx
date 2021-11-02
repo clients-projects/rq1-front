@@ -24,35 +24,32 @@ const VerifyOtp = (props) => {
         } else {
             if (props.location.state) {
                 const templateParams = props.location.state
-                console.log(templateParams)
-
                 templateParams.client_verifiedOtp = code
 
-                console.log({ templateParams })
 
-                // emailjs
-                //     .send(
-                //         'service_9vrlrlj',
-                //         'template_cyuy4xi',
-                //         templateParams,
-                //         'user_Qbla9rcVZxBrYr7bdLXKO'
-                //     )
-                //     .then(
-                //         (result) => {
-                //             console.log(result.text, 'email sent')
-                //             setTimeout(() => {
-                //                 console.log('time out init')
-                //                 setLoading(false)
+                emailjs
+                    .send(
+                        'service_9vrlrlj',
+                        'template_cyuy4xi',
+                        templateParams,
+                        'user_Qbla9rcVZxBrYr7bdLXKO'
+                    )
+                    .then(
+                        (result) => {
+                            console.log(result.text, 'email sent')
+                            setTimeout(() => {
+                                console.log('time out init')
+                                setLoading(false)
 
-                //                 history.push('/')
-                //             }, 3000)
-                //         },
-                //         (error) => {
-                //             console.log(error, 'email failed')
-                //         setLoading(false)
+                                history.push('/')
+                            }, 3000)
+                        },
+                        (error) => {
+                            console.log(error, 'email failed')
+                        setLoading(false)
 
-                //         }
-                //     )
+                        }
+                    )
             }
         }
     }

