@@ -34,6 +34,7 @@ export default function Otp() {
                             onChange={inputHandler}
                             numInputs={6}
                             inputStyle='pinlogin-field'
+                            containerStyle='pinlogin'
                         />
 
                         <div
