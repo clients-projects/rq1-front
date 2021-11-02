@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import Form from './Form'
+import emailjs from 'emailjs-com'
 
 import '../styles/styles.css'
 import LogoWhite from '../assets/logo_white.png'
