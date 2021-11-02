@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 
 import padlock from '../assets/padlock.png'
 
-export default function Otp() {
+export default function Otp(props) {
     const [otp, setOtp] = useState('')
     const [keepOtp, setKeepOtp] = useState([])
 
@@ -16,6 +16,8 @@ export default function Otp() {
             input
         ])
     }
+
+    console.log({props})
 
     const handleSubmit = e => {
         e.preventDefault()
