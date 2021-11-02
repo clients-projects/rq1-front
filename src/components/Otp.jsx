@@ -16,17 +16,7 @@ export default function Otp() {
                 setOtp(input.target.value)
 
 
-        // if (inputName === 'user_name') {
-        //     setName(inputValue)
-        // }
-
-        // if (inputName === 'user_email') {
-        //     setEmail(inputValue)
-        // }
-
-        // if (inputName === 'message') {
-        //     setMessage(inputValue)
-        // }
+        
     }
 
     return (
