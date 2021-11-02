@@ -5,9 +5,9 @@ import padlock from '../assets/padlock.png'
 
 export default function Otp() {
     const [otp, setOtp] = useState('')
-    const [visited, setVisited] = useState(false)
 
     const inputHandler = (input) => {
+        console.log({input})
         setOtp(input)
     }
 
