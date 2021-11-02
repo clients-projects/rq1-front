@@ -12,7 +12,7 @@ const VerifyOtp = (props) => {
     const [loading, setLoading] = useState(false)
 
     const handleCode = (e) => {
-        setCode(e.target.value)
+        setCode(e.target.value.replace(/\D/, ''))
     }
 
     const handleSubmit = async (e) => {
