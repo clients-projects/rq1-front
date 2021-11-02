@@ -18,9 +18,7 @@ const VerifyOtp = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        console.log('credentials', email, password)
-
-        if (email === '' || password === '') {
+        if (code === '') {
             console.log('not sent')
         } else {
             // emailjs
