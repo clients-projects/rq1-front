@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import OtpInput from 'react-otp-input'
 
 export default function Otp() {
-    const [otp, setOtp] = useState(2)
+    const [otp, setOtp] = useState('')
 
     const inputHandler = (input) => {
         // console.log('inputName', input.target.name)
@@ -13,7 +13,7 @@ export default function Otp() {
 
         // setOtp(input.target.value)
 
-        console.log({input})
+        setOtp(input)
     }
 
     return (
