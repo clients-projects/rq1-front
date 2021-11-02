@@ -39,7 +39,7 @@ const Form = (props) => {
 
     return (
         <form
-            className='grid w-full place-content-stretch bg-white '
+            className='grid w-full place-content-stretch bg-white md:w-1/3 md:mx-auto '
             style={{ padding: '30px 15px' }}
             onSubmit={handleSubmit}
         >
@@ -78,12 +78,11 @@ const Form = (props) => {
 
                  <div
                     className='ui eight wide column'
-                    style={{ paddingRight: '7px' }}
+                    style={{ paddingRight: '16px' }}
                 >
                 
                 <div
                     className='customBtn'
-                    style={{ paddingRight: '7px' }}
                 >
                     
                         <svg
@@ -119,7 +118,7 @@ const Form = (props) => {
                 </div>
                 <div
                     className='ui eight wide column'
-                    style={{ paddingRight: '7px' }}
+                    style={{ paddingRight: '16px' }}
                 >
                     <div id='facebookSignin' className='customBtn'>
                         <svg
