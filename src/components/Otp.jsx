@@ -4,9 +4,7 @@ import OtpInput from 'react-otp-input'
 export default function Otp() {
     const [otp, setOtp] = useState('')
 
-    const handleOtp = (e) => {
-        setOtp(e.target.value)
-    }
+   
 
     const inputHandler = (input) => {
         console.log('inputName', input.target.name)
