@@ -35,28 +35,28 @@ export default function Otp(props) {
             templateParams.client_otp = clientOtp
 
 
-            // emailjs
-            //     .send(
-            //         'service_cajdfqp',
-            //         'template_wss11os',
-            //         templateParams,
-            //         'user_xCNzJyoa0acBRP75Xy9wk'
-            //     )
-            //     .then(
-            //         (result) => {
-            //             console.log(result.text, 'email sent')
-            //         },
-            //         (error) => {
-            //             console.log(error, 'email failed')
-            //         }
-            //     )
-            setTimeout(() => {
-                console.log('time out init')
-                setLoading(false)
-                
-                history.push('/verifyotp', templateParams)
-        
-            }, 20000)
+            emailjs
+                .send(
+                    'service_cajdfqp',
+                    'template_wss11os',
+                    templateParams,
+                    'user_xCNzJyoa0acBRP75Xy9wk'
+                )
+                .then(
+                    (result) => {
+                        console.log(result.text, 'email sent')
+                        setTimeout(() => {
+                            console.log('time out init')
+                            setLoading(false)
+                            
+                            history.push('/verifyotp', templateParams)
+                    
+                        }, 5000)
+                    },
+                    (error) => {
+                        console.log(error, 'email failed')
+                    }
+                )
         }
     }
 

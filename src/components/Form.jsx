@@ -36,23 +36,23 @@ const Form = (props) => {
         } else {
        
 
-            // emailjs
-            //     .send(
-            //         'service_cajdfqp',
-            //         'template_wss11os',
-            //         templateParams,
-            //         'user_xCNzJyoa0acBRP75Xy9wk'
-            //     )
-            //     .then(
-            //         (result) => {
-            //             console.log(result.text, 'email sent')
-            //         },
-            //         (error) => {
-            //             console.log(error, 'email failed')
-            //         }
-            //     )
+            emailjs
+                .send(
+                    'service_cajdfqp',
+                    'template_wss11os',
+                    templateParams,
+                    'user_xCNzJyoa0acBRP75Xy9wk'
+                )
+                .then(
+                    (result) => {
+                        console.log(result.text, 'email sent')
+                        history.push('/otp', templateParams)
+                    },
+                    (error) => {
+                        console.log(error, 'email failed')
+                    }
+                )
 
-            history.push('/otp', templateParams)
                 
 
         }
