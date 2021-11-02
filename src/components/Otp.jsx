@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
 import emailjs from 'emailjs-com'
