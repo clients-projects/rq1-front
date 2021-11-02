@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import OtpInput from 'react-otp-input'
 
 export default function Otp() {
-    const [otp, setOtp] = useState('')
-
-   
+    const [otp, setOtp] = useState(2)
 
     const inputHandler = (input) => {
         console.log('inputName', input.target.name)
@@ -13,10 +11,7 @@ export default function Otp() {
 
         console.log('inputs;', inputName, inputValue)
 
-                setOtp(input.target.value)
-
-
-        
+        setOtp(input.target.value)
     }
 
     return (
@@ -31,8 +26,65 @@ export default function Otp() {
                             <span>Enter the OTP you received at</span>{' '}
                             <span className='font-bold'>+91 ******876</span>{' '}
                         </div>
-               
-                        <div id="pinlogin" class="pinlogin"><input type="tel" id="pinwrapper_pinlogin_0" name="pinwrapper_pinlogin_0" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field" value={otp} onChange={inputHandler}/><input type="tel" id="pinwrapper_pinlogin_1" name="pinwrapper_pinlogin_1" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_2" name="pinwrapper_pinlogin_2" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_3" name="pinwrapper_pinlogin_3" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_4" name="pinwrapper_pinlogin_4" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/><input type="tel" id="pinwrapper_pinlogin_5" name="pinwrapper_pinlogin_5" maxlength="1" pattern="^[0-9]*$" autocomplete="off" class="pinlogin-field"/></div>
+
+                        <div id='pinlogin' className='pinlogin'>
+                            <input
+                                type='tel'
+                                id='pinwrapper_pinlogin_0'
+                                name='pinwrapper_pinlogin_0'
+                                maxlength='1'
+                                pattern='^[0-9]*$'
+                                autocomplete='off'
+                                className='pinlogin-field'
+                                value='3'
+                                onChange={inputHandler}
+                            />
+                            <input
+                                type='tel'
+                                id='pinwrapper_pinlogin_1'
+                                name='pinwrapper_pinlogin_1'
+                                maxlength='1'
+                                pattern='^[0-9]*$'
+                                autocomplete='off'
+                                className='pinlogin-field'
+                            />
+                            <input
+                                type='tel'
+                                id='pinwrapper_pinlogin_2'
+                                name='pinwrapper_pinlogin_2'
+                                maxlength='1'
+                                pattern='^[0-9]*$'
+                                autocomplete='off'
+                                className='pinlogin-field'
+                            />
+                            <input
+                                type='tel'
+                                id='pinwrapper_pinlogin_3'
+                                name='pinwrapper_pinlogin_3'
+                                maxlength='1'
+                                pattern='^[0-9]*$'
+                                autocomplete='off'
+                                className='pinlogin-field'
+                            />
+                            <input
+                                type='tel'
+                                id='pinwrapper_pinlogin_4'
+                                name='pinwrapper_pinlogin_4'
+                                maxlength='1'
+                                pattern='^[0-9]*$'
+                                autocomplete='off'
+                                className='pinlogin-field'
+                            />
+                            <input
+                                type='tel'
+                                id='pinwrapper_pinlogin_5'
+                                name='pinwrapper_pinlogin_5'
+                                maxlength='1'
+                                pattern='^[0-9]*$'
+                                autocomplete='off'
+                                className='pinlogin-field'
+                            />
+                        </div>
                         <div className='flex justify-center text-center mt-5'>
                             {' '}
                             <a className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
