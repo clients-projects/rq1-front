@@ -76,11 +76,12 @@ const VerifyOtp = (props) => {
                             the code from the email in the field below.
                         </p>
                         <input
+                        type='number'
                             id='code'
                             className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                             required
                             value={code}
-                            pattern='^[0-9]*$'
+                            pattern='[0-9]*'
                             placeholder='Enter 6 digit code'
                             onChange={handleCode}
                         />
