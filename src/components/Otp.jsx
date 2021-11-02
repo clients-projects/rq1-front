@@ -52,6 +52,10 @@ export default function Otp(props) {
         }
     }
 
+    setTimeout(() => {
+        setLoading(false)
+    }, 3000)
+
     return (
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
