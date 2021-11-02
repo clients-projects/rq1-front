@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 
 
 const Form = (props) => {
+    const history = useHistory()
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
    
@@ -50,7 +52,7 @@ const Form = (props) => {
             //         }
             //     )
 
-            useHistory().push('/otp', templateParams)
+            history.push('/otp', templateParams)
                 
 
         }
