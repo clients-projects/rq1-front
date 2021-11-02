@@ -5,13 +5,15 @@ export default function Otp() {
     const [otp, setOtp] = useState(2)
 
     const inputHandler = (input) => {
-        console.log('inputName', input.target.name)
-        const inputName = input.target.name
-        const inputValue = input.target.value
+        // console.log('inputName', input.target.name)
+        // const inputName = input.target.name
+        // const inputValue = input.target.value
 
-        console.log('inputs;', inputName, inputValue)
+        // console.log('inputs;', inputName, inputValue)
 
-        setOtp(input.target.value)
+        // setOtp(input.target.value)
+
+        console.log({input})
     }
 
     return (
@@ -26,6 +28,13 @@ export default function Otp() {
                             <span>Enter the OTP you received at</span>{' '}
                             <span className='font-bold'>+91 ******876</span>{' '}
                         </div>
+
+                        <OtpInput
+                            value={otp}
+                            onChange={inputHandler}
+                            numInputs={6}
+                            inputStyle='pinlogin-field'
+                        />
 
                         <div
                             id='pinlogin'
