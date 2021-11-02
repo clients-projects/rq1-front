@@ -174,7 +174,7 @@ span.buttonText {
     border-radius: 2px;
     text-align: center;
     color: black;
-    background: inherit;
+    /* background: inherit; */
 }
 
 .pinlogin .pinlogin-field:focus{
