@@ -181,4 +181,5 @@ span.buttonText {
     justify-content: center;
     row-gap: 1rem;
     flex-wrap: wrap;
+    margin: 3rem 0;
 }
