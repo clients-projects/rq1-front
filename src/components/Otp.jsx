@@ -21,7 +21,8 @@ export default function Otp() {
                         width='100rm'
                         alt='roqqu logo'
                         src={padlock}
-                        className='w-2/4 my-8'
+                        className=' my-8'
+                        style={{width: '45%'}}
                     />
                     <div className=' h-64 py-3 rounded text-center'>
                         <h1 className='text-2xl font-bold'>Enter PIN</h1>
