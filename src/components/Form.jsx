@@ -96,9 +96,9 @@ const Form = (props) => {
             <div className='ui grids'>
                 <div
                     className='ui eight wide column'
-                    style={{ paddingRight: '7px' }}
+                    style={{ paddingRight: '16px' }}
                 >
-                    <div className='customBtn' style={{ paddingRight: '7px' }}>
+                    <div className='customBtn'>
                         <svg
                             className='icon'
                             xmlns='http://www.w3.org/2000/svg'
