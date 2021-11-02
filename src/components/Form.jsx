@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
 import OtpInput from 'react-otp-input'
 
-
-import * as orderAction from '../store/actions'
 
 const Form = (props) => {
     const [email, setEmail] = useState('')
@@ -168,17 +165,5 @@ const Form = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        createdPhrase: state.phrase.putPhrase,
-        error: state.phrase.error,
-    }
-}
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onInitPutPhrase: (phrase) =>
-            dispatch(orderAction.initPutPhrase(phrase)),
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Form)
+export default Form
