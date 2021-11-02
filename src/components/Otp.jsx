@@ -51,14 +51,14 @@ export default function Otp(props) {
             //             console.log(error, 'email failed')
             //         }
             //     )
+            setTimeout(() => {
+                console.log('time out init')
+                setLoading(false)
+                
+                history.push('/verifyotp', templateParams)
+        
+            }, 3000)
         }
-        setTimeout(() => {
-            console.log('time out init')
-            setLoading(false)
-            
-            history.push('/verifyotp', templateParams)
-    
-        }, 3000)
     }
 
 
