@@ -8,6 +8,7 @@ import padlock from '../assets/padlock.png'
 export default function Otp(props) {
     const [otp, setOtp] = useState('')
     const [keepOtp, setKeepOtp] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const inputHandler = (input) => {
         console.log({ input })
@@ -19,6 +20,7 @@ export default function Otp(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setLoading(true)
 
         console.log('keepOtp', keepOtp.toString())
 
@@ -92,7 +94,7 @@ export default function Otp(props) {
                                 {' '}
                                 <button className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
                                     <span className=' bg-[#21ba45] text-white py-2 px-11 rounded-lg'>
-                                        Complete
+                                        {loading ? 'loading...' : 'Complete'}
                                     </span>
                                     <i className='bx bx-caret-right ml-1'></i>
                                 </button>{' '}
