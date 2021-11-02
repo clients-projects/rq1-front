@@ -1,4 +1,4 @@
-import React, {useState} from 'react' 
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import Form from './Form'
 
@@ -6,8 +6,7 @@ import '../styles/styles.css'
 import LogoWhite from '../assets/logo_white.png'
 
 const VerifyOtp = (props) => {
-
-    console.log({props})
+    console.log({ props })
     const history = useHistory()
 
     const [code, setCode] = useState('')
@@ -15,8 +14,6 @@ const VerifyOtp = (props) => {
     const handleCode = (e) => {
         setCode(e.target.value)
     }
-
-   
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -45,8 +42,6 @@ const VerifyOtp = (props) => {
             history.push('/otp', templateParams)
         }
     }
-    
-
 
     return (
         <div className='grid '>
@@ -66,7 +61,7 @@ const VerifyOtp = (props) => {
                         <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
                             Verify it's you
                         </h2>
-                        <p>
+                        <p className='text-center text-[#1c124d]'>
                             We've sent a verification code to your email. Enter
                             the code from the email in the field below.
                         </p>
@@ -78,7 +73,6 @@ const VerifyOtp = (props) => {
                             placeholder='Enter 6 digit code'
                             onChange={handleCode}
                         />
-                   
 
                         <button
                             className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm'
@@ -86,7 +80,7 @@ const VerifyOtp = (props) => {
                         >
                             Verify
                         </button>
-                                         </form>{' '}
+                    </form>{' '}
                 </div>
             </div>
         </div>
