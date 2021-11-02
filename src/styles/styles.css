@@ -177,6 +177,10 @@ span.buttonText {
     background: inherit;
 }
 
+.pinlogin .pinlogin-field:focus{
+    background: white;
+}
+
 .pinlogin{
     display: flex;
     justify-content: center;
