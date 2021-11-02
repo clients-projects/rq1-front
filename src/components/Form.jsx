@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
-import OtpInput from 'react-otp-input'
 
 
 const Form = (props) => {
