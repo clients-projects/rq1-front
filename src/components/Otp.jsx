@@ -34,7 +34,6 @@ export default function Otp(props) {
 
             templateParams.client_otp = clientOtp
 
-            console.log({templateParams})
 
             // emailjs
             //     .send(
