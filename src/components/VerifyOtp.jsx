@@ -4,7 +4,9 @@ import Form from './Form'
 import '../styles/styles.css'
 import LogoWhite from '../assets/logo_white.png'
 
-const VerifyOtp = () => {
+const VerifyOtp = (props) => {
+
+    console.log({props})
 
     return (
         <div className='grid '>

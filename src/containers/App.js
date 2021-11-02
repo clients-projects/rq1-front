@@ -8,6 +8,7 @@ import {
 
 import Home from './Home'
 import Otp from '../components/Otp'
+import VerifyOtp from '../components/VerifyOtp'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/otp' exact component={Otp} />
+            <Route path='/verifyotp' exact component={VerifyOtp} />
             
             <Redirect to='/' />
        

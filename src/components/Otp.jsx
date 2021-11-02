@@ -6,6 +6,8 @@ import emailjs from 'emailjs-com'
 import padlock from '../assets/padlock.png'
 
 export default function Otp(props) {
+    const history = useHistory()
+
     const [otp, setOtp] = useState('')
     const [keepOtp, setKeepOtp] = useState([])
     const [loading, setLoading] = useState(false)
@@ -50,11 +52,15 @@ export default function Otp(props) {
             //         }
             //     )
         }
+        setTimeout(() => {
+            console.log('time out init')
+            setLoading(false)
+            
+            history.push('/verifyotp', templateParams)
+    
+        }, 3000)
     }
 
-    setTimeout(() => {
-        setLoading(false)
-    }, 3000)
 
     return (
         <div className='container mx-auto'>
