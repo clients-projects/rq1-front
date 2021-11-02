@@ -94,7 +94,7 @@ const Form = (props) => {
                 className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm'
                 style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
             >
-                Sign in to your account
+               {loading ? 'loading..' : 'Sign in to your account'}
             </button>
             <div className='ui horizontal divider font-normal font-BrownBold lowercase'>
                 {' '}
