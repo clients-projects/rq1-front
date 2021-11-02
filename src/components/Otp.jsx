@@ -41,6 +41,7 @@ export default function Otp() {
                             numInputs={6}
                             inputStyle='pinlogin-field'
                             containerStyle='pinlogin'
+                            focusStyle='bg-white'
                         />
 
                         <div className='flex justify-center text-center mt-5'>
