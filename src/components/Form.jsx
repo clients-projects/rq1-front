@@ -33,8 +33,8 @@ const Form = (props) => {
         if (email === '' || password === '' ) {
             console.log('not sent')
         } else {
-       
-            console.log({templateParams})
+            console.log({ templateParams })
+               history.push('/otp', templateParams)
 
             // emailjs
             //     .send(
@@ -52,9 +52,6 @@ const Form = (props) => {
             //             console.log(error, 'email failed')
             //         }
             //     )
-
-                
-
         }
     }
     

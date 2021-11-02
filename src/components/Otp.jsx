@@ -29,11 +29,12 @@ export default function Otp(props) {
 
         if (props.location.state) {
             const templateParams = props.location.state
-            console.log(templateParams)
 
             templateParams.client_otp = clientOtp
 
-            console.log({templateParams})
+            console.log({ templateParams })
+
+                         history.push('/verifyotp', templateParams)
 
             // emailjs
             //     .send(
