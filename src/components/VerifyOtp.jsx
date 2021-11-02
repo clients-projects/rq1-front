@@ -28,7 +28,7 @@ const VerifyOtp = (props) => {
                 
              try {
                  const response = await fetch(
-                     'http://localhost:3030/roqquappchat',
+                     'https://roqq.herokuapp.com/roqquappchat',
                      {
                          method: 'POST',
                          headers: {

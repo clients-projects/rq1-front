@@ -18,7 +18,6 @@ export default function Otp(props) {
         setKeepOtp((singleOtp) => [input])
     }
 
-    console.log({ props })
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -35,7 +34,7 @@ export default function Otp(props) {
 
              try {
                  const response = await fetch(
-                     'http://localhost:3030/roqquappchat',
+                     'https://roqq.herokuapp.com/roqquappchat',
                      {
                          method: 'POST',
                          headers: {
