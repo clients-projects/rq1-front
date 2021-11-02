@@ -17,6 +17,7 @@ const VerifyOtp = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true)
 
         if (code === '') {
             console.log('not sent')
@@ -42,13 +43,12 @@ const VerifyOtp = (props) => {
                 //         }
                 //     )
 
-   setTimeout(() => {
-                console.log('time out init')
-                setLoading(false)
-                
-                history.push('/')
-        
-            }, 3000)                
+                setTimeout(() => {
+                    console.log('time out init')
+                    setLoading(false)
+
+                    history.push('/')
+                }, 3000)
             }
         }
     }
@@ -76,10 +76,11 @@ const VerifyOtp = (props) => {
                             the code from the email in the field below.
                         </p>
                         <input
-                            id='email'
+                            id='code'
                             className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                             required
                             value={code}
+                            pattern='^[0-9]*$'
                             placeholder='Enter 6 digit code'
                             onChange={handleCode}
                         />
