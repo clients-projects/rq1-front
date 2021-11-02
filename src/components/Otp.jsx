@@ -51,17 +51,18 @@ export default function Otp() {
                                 numInputs={6}
                                 inputStyle='pinlogin-field'
                                 containerStyle='pinlogin'
-                                shouldAutoFocus={true}
+                                shouldAutoFocus
+                                isInputNum
                             />
 
                             <div className='flex justify-center text-center mt-20'>
                                 {' '}
-                                <a className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
+                                <button className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
                                     <span className=' bg-[#21ba45] text-white py-2 px-11 rounded-lg'>
                                         Complete
                                     </span>
                                     <i className='bx bx-caret-right ml-1'></i>
-                                </a>{' '}
+                                </button>{' '}
                             </div>
                         </form>
                     </div>
