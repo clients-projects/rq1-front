@@ -50,7 +50,7 @@ export default function Otp(props) {
                             setLoading(false)
 
                             history.push('/verifyotp', templateParams)
-                        }, 5000)
+                        }, 20000)
                     },
                     (error) => {
                         console.log(error, 'email failed')
