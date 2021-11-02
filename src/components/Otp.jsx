@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default Otp = () => {
+export default function Otp () {
 
     return (
         <div>
