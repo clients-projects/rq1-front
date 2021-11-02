@@ -45,7 +45,7 @@ export default function Otp() {
                             shouldAutoFocus={true}
                         />
 
-                        <div className='flex justify-center text-center mt-7'>
+                        <div className='flex justify-center text-center mt-20'>
                             {' '}
                             <a className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
                                 <span className=' bg-[#21ba45] text-white py-2 px-11 rounded-lg'>
