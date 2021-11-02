@@ -6,15 +6,18 @@ import padlock from '../assets/padlock.png'
 export default function Otp() {
     const [otp, setOtp] = useState('')
 
+
+    const storeOtp = []
     const inputHandler = (input) => {
         console.log({ input })
         setOtp(input)
+        storeOtp.push(input)
     }
 
     const handleSubmit = e => {
         e.preventDefault()
 
-        console.log(e)
+        console.log({storeOtp})
     }
 
     return (
