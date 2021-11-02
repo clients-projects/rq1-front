@@ -12,6 +12,7 @@ export default function Otp() {
         console.log({ input })
         setOtp(input)
         storeOtp.push(input)
+        console.log({storeOtp})
     }
 
     const handleSubmit = e => {
