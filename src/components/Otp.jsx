@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import OtpInput from 'react-otp-input'
 
-import PadLock from '../assets/padlock.png'
+import padlock from '../assets/padlock.png'
 
 export default function Otp() {
     const [otp, setOtp] = useState('')
@@ -16,7 +16,7 @@ export default function Otp() {
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
                 <div className='w-full'>
-                    <img class="signin-logo" width="100rm" alt="roqqu logo" src={Padlock}/>
+                    <img class="signin-logo" width="100rm" alt="roqqu logo" src={padlock}/>
                     <div className=' h-64 py-3 rounded text-center'>
                         <h1 className='text-2xl font-bold'>OTP Verification</h1>
                         <div className='flex flex-col mt-4'>
