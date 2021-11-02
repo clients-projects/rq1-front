@@ -73,7 +73,7 @@ const VerifyOtp = (props) => {
                         style={{ padding: '30px 15px' }}
                         onSubmit={handleSubmit}
                     >
-                        <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
+                        <h2 className='font-HelveticaBold text-center text-[#1c124d] mb-4 text-2xl'>
                             Verify it's you
                         </h2>
                         <input
