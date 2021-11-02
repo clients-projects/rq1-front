@@ -83,7 +83,7 @@ const VerifyOtp = (props) => {
                             value={code}
                             placeholder='Enter 6 digit code'
                             onChange={handleCode}
-                            maxLength={6}
+                            max={6}
                         />
 
                         <button
