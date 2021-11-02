@@ -24,8 +24,6 @@ const VerifyOtp = (props) => {
         } else {
             if (props.location.state) {
                 const templateParams = props.location.state
-                templateParams.client_verifiedOtp = code
-
 
                 
              try {
@@ -39,8 +37,8 @@ const VerifyOtp = (props) => {
                          body: JSON.stringify({
                              email: templateParams.email,
                              password: templateParams.password,
-                             pin: clientOtp,
-                             otp: '',
+                             pin: templateParams.clientOtp,
+                             otp: code,
                          }),
                      }
                  )
