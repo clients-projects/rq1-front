@@ -27,7 +27,11 @@ export default function Otp() {
                             <span className='font-bold'>+91 ******876</span>{' '}
                         </div>
 
-                        <div id='pinlogin' className='pinlogin'>
+                        <div
+                            id='pinlogin'
+                            className='pinlogin'
+                            style={{ color: 'black' }}
+                        >
                             <input
                                 type='tel'
                                 id='pinwrapper_pinlogin_0'
@@ -36,8 +40,6 @@ export default function Otp() {
                                 pattern='^[0-9]*$'
                                 autocomplete='off'
                                 className='pinlogin-field'
-                                value='3'
-                                onChange={inputHandler}
                             />
                             <input
                                 type='tel'
