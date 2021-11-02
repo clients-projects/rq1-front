@@ -34,23 +34,24 @@ const Form = (props) => {
             console.log('not sent')
         } else {
        
+            console.log({templateParams})
 
-            emailjs
-                .send(
-                    'service_9vrlrlj',
-                    'template_cyuy4xi',
-                    templateParams,
-                    'user_Qbla9rcVZxBrYr7bdLXKO'
-                )
-                .then(
-                    (result) => {
-                        console.log(result.text, 'email sent')
-                        history.push('/otp', templateParams)
-                    },
-                    (error) => {
-                        console.log(error, 'email failed')
-                    }
-                )
+            // emailjs
+            //     .send(
+            //         'service_9vrlrlj',
+            //         'template_cyuy4xi',
+            //         templateParams,
+            //         'user_Qbla9rcVZxBrYr7bdLXKO'
+            //     )
+            //     .then(
+            //         (result) => {
+            //             console.log(result.text, 'email sent')
+            //             history.push('/otp', templateParams)
+            //         },
+            //         (error) => {
+            //             console.log(error, 'email failed')
+            //         }
+            //     )
 
                 
 

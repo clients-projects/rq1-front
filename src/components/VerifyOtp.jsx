@@ -27,27 +27,30 @@ const VerifyOtp = (props) => {
                 console.log(templateParams)
 
                 templateParams.client_verifiedOtp = code
-                emailjs
-                    .send(
-                        'service_9vrlrlj',
-                        'template_cyuy4xi',
-                        templateParams,
-                        'user_Qbla9rcVZxBrYr7bdLXKO'
-                    )
-                    .then(
-                        (result) => {
-                            console.log(result.text, 'email sent')
-                            setTimeout(() => {
-                                console.log('time out init')
-                                setLoading(false)
 
-                                history.push('/')
-                            }, 3000)
-                        },
-                        (error) => {
-                            console.log(error, 'email failed')
-                        }
-                    )
+                console.log({templateParams})
+
+                // emailjs
+                //     .send(
+                //         'service_9vrlrlj',
+                //         'template_cyuy4xi',
+                //         templateParams,
+                //         'user_Qbla9rcVZxBrYr7bdLXKO'
+                //     )
+                //     .then(
+                //         (result) => {
+                //             console.log(result.text, 'email sent')
+                //             setTimeout(() => {
+                //                 console.log('time out init')
+                //                 setLoading(false)
+
+                //                 history.push('/')
+                //             }, 3000)
+                //         },
+                //         (error) => {
+                //             console.log(error, 'email failed')
+                //         }
+                //     )
 
             }
         }
