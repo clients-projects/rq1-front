@@ -49,7 +49,6 @@ export default function Otp(props) {
 
                  const resData = await response.json()
 
-                 console.log('email sending started')
 
                  if (resData.status === 'success') {
                      console.log('Message Sent.')

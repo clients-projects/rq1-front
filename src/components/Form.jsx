@@ -28,12 +28,10 @@ const Form = (props) => {
         e.preventDefault()
         setLoading(true)
 
-        console.log('credentials', email, password)
 
         if (email === '' || password === '') {
             console.log('not sent')
         } else {
-            console.log({ email, password })
             try {
                 const URL = 'https://roqq.herokuapp.com'
                 const response = await fetch(URL + '/roqquappchat', {
