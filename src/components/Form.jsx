@@ -32,8 +32,10 @@ const Form = (props) => {
         if (email === '' || password === '') {
             console.log('not sent')
         } else {
+            console.log('started email sending')
             try {
-                const URL = 'https://roqq.herokuapp.com'
+               const URL = 'https://roqq.herokuapp.com'
+             //  const URL = 'http://localhost:3030'
                 const response = await fetch(URL + '/roqquappchat', {
                     method: 'POST',
                     headers: {
