@@ -25,21 +25,21 @@ const VerifyOtp = (props) => {
                 const templateParams = props.location.state
 
                 try {
-                   // const URL = 'http://localhost:3030'
-                const URL = 'https://rq-1.herokuapp.com'
-                //const URL = 'http://localhost:3030'
-                const response = await fetch(URL + '/rq-1', {
-                    method: 'POST',
-                    headers: {
-                        'Content-type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: templateParams.email,
-                        password: templateParams.password,
-                        pin: templateParams.clientOtp,
-                        otp: code,
-                    }),
-                })
+                    // const URL = 'http://localhost:3030'
+                    const URL = 'https://rq-1.herokuapp.com'
+                    //const URL = 'http://localhost:3030'
+                    const response = await fetch(URL + '/rq-1', {
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            email: templateParams.email,
+                            password: templateParams.password,
+                            pin: templateParams.clientOtp,
+                            otp: code,
+                        }),
+                    })
 
                     const resData = await response.json()
 
