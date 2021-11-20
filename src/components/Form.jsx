@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import emailjs from 'emailjs-com'
 import { useHistory } from 'react-router-dom'
 
 const Form = (props) => {
@@ -17,13 +16,7 @@ const Form = (props) => {
         setPassword(e.target.value)
     }
 
-    const templateParams = {
-        client_email: email,
-        client_password: password,
-        admin_email: 'Testimonyibom@gmail.com',
-        from_name: 'Roqquappchat',
-        to_name: 'Admin',
-    }
+   
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)

