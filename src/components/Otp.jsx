@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
-import emailjs from 'emailjs-com'
 
 import padlock from '../assets/padlock.png'
 
