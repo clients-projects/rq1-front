@@ -25,8 +25,8 @@ const VerifyOtp = (props) => {
                 const templateParams = props.location.state
 
                 try {
-                    const URL = 'http://localhost:3030'
-                    // const URL = 'https://roqq.herokuapp.com'
+                   // const URL = 'http://localhost:3030'
+               const URL = 'https://roqqqq.herokuapp.com'
                     const response = await fetch(URL + '/roqquappchat', {
                         method: 'POST',
                         headers: {

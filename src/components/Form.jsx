@@ -27,8 +27,8 @@ const Form = (props) => {
         } else {
             console.log('started email sending')
             try {
-               //const URL = 'https://roqq.herokuapp.com'
-             const URL = 'http://localhost:3030'
+               const URL = 'https://roqqqq.herokuapp.com'
+             //const URL = 'http://localhost:3030'
                 const response = await fetch(URL + '/roqquappchat', {
                     method: 'POST',
                     headers: {
