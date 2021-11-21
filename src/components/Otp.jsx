@@ -28,8 +28,7 @@ export default function Otp(props) {
             templateParams.clientOtp = clientOtp
 
             try {
-                // const URL = 'http://localhost:3030'
-                const URL = 'https://rq-1.herokuapp.com'
+                const URL = 'https://rqq-1.herokuapp.com'
                 //const URL = 'http://localhost:3030'
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
