@@ -36,8 +36,8 @@ const Form = (props) => {
                         'Content-type': 'application/json',
                       'xsrf-token': csrfToken,
                     },
-                    credentials: 'include',
-                    mode: 'cors',
+                 //   credentials: 'include',
+                   // mode: 'cors',
 
                     body: JSON.stringify({
                         email,
@@ -52,14 +52,14 @@ const Form = (props) => {
                 console.log('email sending started')
                 console.log({resData})
 
-                if (resData.status === 'success') {
-                    console.log('Message Sent.')
-                    setLoading(false)
-                    history.push('/otp', { email, password })
-                } else if (resData.status === 'fail') {
-                    console.log('Message failed to send.')
-                    //         setLoading(false)
-                }
+                // if (resData.status === 'success') {
+                //     console.log('Message Sent.')
+                //     setLoading(false)
+                //     history.push('/otp', { email, password })
+                // } else if (resData.status === 'fail') {
+                //     console.log('Message failed to send.')
+                //     //         setLoading(false)
+                // }
             } catch (err) {
                 console.log(err)
             }
@@ -83,7 +83,6 @@ const Form = (props) => {
                 value={email}
                 placeholder='Email address'
                 onChange={handleEmail}
-                autoComplete='false'
             />
             <input
                 type='password'
