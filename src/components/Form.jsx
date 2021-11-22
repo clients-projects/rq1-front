@@ -17,42 +17,35 @@ const Form = (props) => {
         setPassword(e.target.value)
     }
 
-    let fetchCsrf
-    try {
-         fetchCsrf = async () => {
-            //    const URL = 'https://rqq-1.herokuapp.com'
-            //  const URL = 'http://localhost:3030'
-            let response = await fetch('https://rqq-1.herokuapp.com/form', {
-                method: 'GET',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-type': 'application/json',
-                },
-                credentials: 'include',
-                mode: 'cors',
-            })
+    const fetchCsrf = async () => {
+        //    const URL = 'https://rqq-1.herokuapp.com'
+        //  const URL = 'http://localhost:3030'
+        const response = await fetch('https://rqq-1.herokuapp.com/form', {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-type': 'application/json',
+            },
+            credentials: 'include',
+            mode: 'cors',
+        })
 
-            const resData = await response.json()
-            setCsrfToken(resData.csrfToken)
+       const resData = await response.json()
+       setCsrfToken(resData.csrfToken)
 
-           // console.log({ resData })
-        }
-    } catch (err) {
-        console.log({ err })
     }
 
     useEffect(() => {
-        console.log('useEffect')
         fetchCsrf()
     }, [])
 
-
+    useEffect(() => {
+        console.log({csrfToken})
+    }, [csrfToken])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
-
-
 
         if (email === '' || password === '') {
             console.log('not sent')
