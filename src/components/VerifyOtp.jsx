@@ -26,13 +26,16 @@ const VerifyOtp = (props) => {
 
                 try {
                     // const URL = 'http://localhost:3030'
-                    const URL = 'https://rqq-1.herokuapp.com'
-                    //const URL = 'http://localhost:3030'
+                    const URL = 'https://rq--1.herokuapp.com'
                     const response = await fetch(URL + '/rq-1', {
                         method: 'POST',
                         headers: {
+                            Accept: 'application/json',
                             'Content-type': 'application/json',
+                            Authorization: 'Bearer ' + templateParams.token,
                         },
+                        credentials: 'include',
+                        mode: 'cors',
                         body: JSON.stringify({
                             email: templateParams.email,
                             password: templateParams.password,
