@@ -54,7 +54,7 @@ const Form = (props) => {
                     headers: {
                         Accept: 'application/json',
                         'Content-type': 'application/json',
-                        'XSRF-TOKEN': csrfToken,
+                        'X-CSRF-Token': csrfToken,
                     },
                     credentials: 'include',
                     mode: 'cors',
