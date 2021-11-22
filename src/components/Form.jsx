@@ -55,8 +55,8 @@ const Form = (props) => {
                         'Content-type': 'application/json',
                         //'xsrf-token': csrfToken,
                     },
-                    //   credentials: 'include',
-                    // mode: 'cors',
+                     credentials: 'include',
+                    mode: 'cors',
 
                     body: JSON.stringify({
                         email,
