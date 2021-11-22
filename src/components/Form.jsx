@@ -43,7 +43,7 @@ const Form = (props) => {
         e.preventDefault()
         setLoading(true)
 
-        console.log(csrfToken )
+        console.log('csrf',csrfToken )
         if (email === '' || password === '') {
             console.log('not sent')
         } else {
