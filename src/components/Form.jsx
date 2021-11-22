@@ -16,8 +16,8 @@ const Form = (props) => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
-    const URL = 'http://localhost:3030'
-//      const URL = 'https://rqq-1.herokuapp.com'
+   // const URL = 'http://localhost:3030'
+  const URL = 'https://rqq-1.herokuapp.com'
 
     const fetchCsrf = async () => {
         //    const URL = 'https://rqq-1.herokuapp.com'
@@ -49,7 +49,6 @@ const Form = (props) => {
         } else {
             console.log('started email sending')
             try {
-                //  const URL = 'http://localhost:3030'
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
                     headers: {
