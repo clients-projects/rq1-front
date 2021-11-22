@@ -53,7 +53,7 @@ const Form = (props) => {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
-                        //'xsrf-token': csrfToken,
+                        'xsrf-token': csrfToken,
                     },
                      credentials: 'include',
                     mode: 'cors',
