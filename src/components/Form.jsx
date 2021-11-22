@@ -28,15 +28,16 @@ const Form = (props) => {
         } else {
             console.log('started email sending')
             try {
-               const URL = 'https://rqq-1.herokuapp.com'
-             //const URL = 'http://localhost:3030'
+              // const URL = 'https://rqq-1.herokuapp.com'
+             const URL = 'http://localhost:3030'
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
                       'xsrf-token': csrfToken,
                     },
-                   
+                    credentials: 'include',
+                    mode: 'cors',
 
                     body: JSON.stringify({
                         email,
@@ -49,6 +50,7 @@ const Form = (props) => {
                 const resData = await response.json()
 
                 console.log('email sending started')
+                console.log({resData})
 
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
