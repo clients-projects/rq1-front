@@ -21,6 +21,7 @@ const Form = (props) => {
         e.preventDefault()
         setLoading(true)
 
+        const csrfToken = ''
 
         if (email === '' || password === '') {
             console.log('not sent')
@@ -33,7 +34,11 @@ const Form = (props) => {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
+                      'xsrf-token': csrfToken,
                     },
+                    credentials: 'include',
+                    mode: 'cors',
+
                     body: JSON.stringify({
                         email,
                         password,
