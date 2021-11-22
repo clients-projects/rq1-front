@@ -83,6 +83,7 @@ const Form = (props) => {
                 value={email}
                 placeholder='Email address'
                 onChange={handleEmail}
+                autoComplete='false'
             />
             <input
                 type='password'
@@ -120,7 +121,7 @@ const Form = (props) => {
                             aria-hidden='true'
                         >
                             <title>Google</title>
-                            <g fill='none' fill-rule='evenodd'>
+                            <g fill='none' fillRule='evenodd'>
                                 <path
                                     fill='#4285F4'
                                     d='M17.64 9.2045c0-.6381-.0573-1.2518-.1636-1.8409H9v3.4814h4.8436c-.2086 1.125-.8427 2.0782-1.7959 2.7164v2.2581h2.9087c1.7018-1.5668 2.6836-3.874 2.6836-6.615z'
