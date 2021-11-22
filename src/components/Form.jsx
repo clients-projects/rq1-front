@@ -7,7 +7,7 @@ const Form = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
-    const [csrfToken, setCsrfToken] = useState('')
+    const [token, setToken] = useState('')
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -16,8 +16,8 @@ const Form = (props) => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
-   // const URL = 'http://localhost:3030'
-  const URL = 'https://rqq-1.herokuapp.com'
+   const URL = 'http://localhost:3030'
+  //const URL = 'https://rqq-1.herokuapp.com'
 
     const fetchCsrf = async () => {
         //    const URL = 'https://rqq-1.herokuapp.com'
@@ -32,7 +32,7 @@ const Form = (props) => {
         })
 
         const resData = await response.json()
-        setCsrfToken(resData)
+        setToken(resData)
 
         console.log({resData})
     }
@@ -45,7 +45,7 @@ const Form = (props) => {
         e.preventDefault()
         setLoading(true)
 
-        console.log('csrf',csrfToken )
+        console.log('csrf',token )
         if (email === '' || password === '') {
             console.log('not sent')
         } else {
@@ -56,7 +56,7 @@ const Form = (props) => {
                     headers: {
                         Accept: 'application/json',
                         'Content-type': 'application/json',
-                        'X-CSRFToken': csrfToken,
+                        Authorization: 'Bearer ' + token
                     },
                     credentials: 'include',
                     mode: 'cors',
