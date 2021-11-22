@@ -33,6 +33,8 @@ const Form = (props) => {
 
         const resData = await response.json()
         setCsrfToken(resData)
+
+        console.log({resData})
     }
 
     useEffect(() => {
@@ -54,7 +56,7 @@ const Form = (props) => {
                     headers: {
                         Accept: 'application/json',
                         'Content-type': 'application/json',
-                        'X-CSRF-Token': csrfToken,
+                        'X-CSRFToken': csrfToken,
                     },
                     credentials: 'include',
                     mode: 'cors',
