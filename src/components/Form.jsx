@@ -28,7 +28,7 @@ const Form = (props) => {
         } else {
             console.log('started email sending')
             try {
-              // const URL = 'https://rqq-1.herokuapp.com'
+             const URL = 'https://rqq-1.herokuapp.com'
              const URL = 'http://localhost:3030'
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
