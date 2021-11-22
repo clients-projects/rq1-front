@@ -66,6 +66,7 @@ const Form = (props) => {
                 })
 
                 const resData = await response.json()
+                console.log({resData})
 
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
