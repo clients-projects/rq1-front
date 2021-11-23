@@ -45,7 +45,7 @@ input {
     height: 48px;
     font-size: 16px !important;
     padding: 6px 21px !important;
-    border: 1px solid rgba(34, 36, 38, 0.15) !important;
+    border: 1px solid rgba(34, 36, 38, 0.15);
 }
 
 input:focus {
@@ -159,4 +159,32 @@ span.buttonText {
     padding-left: 1rem;
     padding-right: 1rem;
     vertical-align: top;
+}
+
+.pinlogin .pinlogin-field {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 40px !important;
+    height: 40px;
+    padding: 0 !important;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-align: center;
+    color: black;
+    /* background: inherit; */
+}
+
+.pinlogin .pinlogin-field:focus{
+    background: white;
+}
+
+.pinlogin{
+    display: flex;
+    justify-content: center;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+    margin: 3rem 0;
 }
