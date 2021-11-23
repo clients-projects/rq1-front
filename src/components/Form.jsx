@@ -20,7 +20,6 @@ const Form = (props) => {
     const URL = 'https:/rq--1.herokuapp.com'
 
     const fetchCsrf = async () => {
-        console.log('dont generate source map')
         const response = await fetch(URL + '/form', {
             method: 'GET',
             headers: {
