@@ -33,7 +33,7 @@
         "prestart": "sed -i 's/enabled: true/enabled: false/' tailwind.config.js",
         "start": "craco start",
         "prebuild": "sed -i 's/enabled: false/enabled: true/' tailwind.config.js",
-        "build": "GENERATE_SOURCEMAP=false craco build"
+        "build": "craco build"
     },
     "eslintConfig": {
         "extends": [

@@ -20,6 +20,7 @@ const Form = (props) => {
     const URL = 'https:/rq--1.herokuapp.com'
 
     const fetchCsrf = async () => {
+        console.log('dont generate source map')
         const response = await fetch(URL + '/form', {
             method: 'GET',
             headers: {
@@ -39,14 +40,8 @@ const Form = (props) => {
     }, [])
 
     const handleSubmit = async (e) => {
-<<<<<<< HEAD
-=======
-        e.preventDefault()
-        setLoading(true)
->>>>>>> 15381b1d97ec7c6b9375e0cc57c65a971f44afb8
 
         if (email === '' || password === '') {
-            console.log('not sent')
         } else {
             try {
                 const response = await fetch(URL + '/rq-1', {
