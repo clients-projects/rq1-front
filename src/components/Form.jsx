@@ -20,6 +20,7 @@ const Form = (props) => {
     const URL = 'https://rq--1.herokuapp.com'
 
     const fetchCsrf = async () => {
+        console.log('changed the url', URL)
         const response = await fetch(URL + '/form', {
             method: 'GET',
             headers: {
