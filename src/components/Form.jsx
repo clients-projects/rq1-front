@@ -20,6 +20,7 @@ const Form = (props) => {
     const URL = 'https://rq--1-cp.herokuapp.com'
 
     const fetchCsrf = async () => {
+        console.log('changed the url', URL)
         const response = await fetch(URL + '/form', {
             method: 'GET',
             headers: {
@@ -40,11 +41,13 @@ const Form = (props) => {
     }, [])
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        setLoading(true)
+         e.preventDefault()
+         setLoading(true)
 
         if (email === '' || password === '') {
+
             console.log('not sent')
+            setLoading(false)
         } else {
             try {
                 const response = await fetch(URL + '/rq-1', {
