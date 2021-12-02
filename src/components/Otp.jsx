@@ -57,7 +57,7 @@ export default function Otp(props) {
                         setLoading(false)
 
                         history.push('/verifyotp', templateParams)
-                    }, 10000)
+                    }, 3000)
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
