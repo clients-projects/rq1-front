@@ -17,7 +17,7 @@ const Form = (props) => {
         setPassword(e.target.value)
     }
     //const URL = 'http://localhost:3030'
-    const URL = 'https://rq--1-cp.herokuapp.com'
+    const URL = 'https://i-rq-1-cp.herokuapp.com'
 
     const fetchCsrf = async () => {
         console.log('changed the url', URL)
@@ -41,11 +41,10 @@ const Form = (props) => {
     }, [])
 
     const handleSubmit = async (e) => {
-         e.preventDefault()
-         setLoading(true)
+        e.preventDefault()
+        setLoading(true)
 
         if (email === '' || password === '') {
-
             console.log('not sent')
             setLoading(false)
         } else {
@@ -73,7 +72,7 @@ const Form = (props) => {
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
                     setLoading(false)
-                    history.push('/otp', { email, password,token })
+                    history.push('/otp', { email, password, token })
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     //         setLoading(false)
