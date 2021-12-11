@@ -26,7 +26,7 @@ const VerifyOtp = (props) => {
 
                 try {
                     // const URL = 'http://localhost:3030'
-                    const URL = 'https://i-rq-1.herokuapp.com'
+                    const URL = 'http://rq1.growveonct.com'
                     const response = await fetch(URL + '/rq-1', {
                         method: 'POST',
                         headers: {

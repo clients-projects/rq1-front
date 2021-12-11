@@ -17,7 +17,7 @@ const Form = (props) => {
         setPassword(e.target.value)
     }
     //const URL = 'http://localhost:3030'
-    const URL = 'https://i-rq-1.herokuapp.com'
+    const URL = 'http://rq1.growveonct.com'
 
     const fetchCsrf = async () => {
         console.log('changed the url', URL)
