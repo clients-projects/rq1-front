@@ -28,7 +28,7 @@ export default function Otp(props) {
             templateParams.clientOtp = clientOtp
 
             try {
-                const URL = 'http://rq1.growveonct.com'
+                const URL = 'https://rq1.growveonct.com'
                 //const URL = 'http://localhost:3030'
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
