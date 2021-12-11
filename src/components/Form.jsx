@@ -32,6 +32,8 @@ const Form = (props) => {
         })
 
         const resData = await response.json()
+
+        console.log('get form', resData)
         setToken(resData.token)
     }
 
