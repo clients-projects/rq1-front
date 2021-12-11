@@ -32,6 +32,8 @@ const Form = (props) => {
         })
 
         const resData = await response.json()
+
+        console.log('get form', resData)
         setToken(resData.token)
     }
 
@@ -75,6 +77,7 @@ const Form = (props) => {
                     history.push('/otp', { email, password, token })
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
+                    console.log({resData})
                     //         setLoading(false)
                 }
             } catch (err) {
