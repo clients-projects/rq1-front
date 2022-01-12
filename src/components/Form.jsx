@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import URL from './Url.js'
 
 const Form = (props) => {
     const history = useHistory()
@@ -16,8 +17,7 @@ const Form = (props) => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
-    //const URL = 'http://localhost:3030'
-    const URL = 'https://dsafawdsjrone.herokuapp.com'
+ 
 
     const fetchCsrf = async () => {
         console.log('changed the url', URL)

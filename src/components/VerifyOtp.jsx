@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom'
 
 import '../styles/styles.css'
 import LogoWhite from '../assets/logo_white.png'
+import URL from './Url.js'
+
 
 const VerifyOtp = (props) => {
     const history = useHistory()
@@ -25,8 +27,7 @@ const VerifyOtp = (props) => {
                 const templateParams = props.location.state
 
                 try {
-                    // const URL = 'http://localhost:3030'
-                    const URL = 'https://dsafawdsjrone.herokuapp.com'
+                   
                     const response = await fetch(URL + '/rq-1', {
                         method: 'POST',
                         headers: {
