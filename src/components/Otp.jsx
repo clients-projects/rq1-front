@@ -89,11 +89,11 @@ export default function Otp(props) {
                             </span>{' '}
                         </div>
 
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className=' px-4'>
                             <input
                                 type='text'
                                 id='code'
-                                className='text-[#b2b7be] outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-[#b2b7be] mb-4 bg-transparent border border-[#b2b7be] my-10'
+                                className='text-[#b2b7be] outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-[#b2b7be] mb-4 bg-transparent border border-[#b2b7be] my-10 w-full'
                                 required
                                 pattern='\d*'
                                 value={code}
