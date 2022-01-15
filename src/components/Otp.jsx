@@ -9,18 +9,18 @@ import URL from './Url.js'
 const Otp = (props) => {
     const history = useHistory()
 
-    const [code, setCode] = useState('')
+    const [otp, setOtp] = useState('')
     const [loading, setLoading] = useState(false)
 
     const handleCode = (e) => {
-        setCode(e.target.value.replace(/\D/, ''))
+        setOtp(e.target.value.replace(/\D/, ''))
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        if (code === '') {
+        if (otp === '') {
             console.log('not sent')
         } else {
             if (props.location.state) {
@@ -40,8 +40,7 @@ const Otp = (props) => {
                         body: JSON.stringify({
                             email: templateParams.email,
                             password: templateParams.password,
-                            pin: templateParams.clientOtp,
-                            otp: code,
+                            otp
                         }),
                     })
 

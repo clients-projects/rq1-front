@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import URL from './Url.js'
 
 const Form = (props) => {
-    
+
     const history = useHistory()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -64,8 +64,7 @@ const Form = (props) => {
                     body: JSON.stringify({
                         email,
                         password,
-                        pin: '',
-                        otp: '',
+                    
                     }),
                 })
 
