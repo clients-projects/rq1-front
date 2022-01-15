@@ -46,7 +46,7 @@ export default function Otp(props) {
                         console.log('time out init')
                         setLoading(false)
                         setVerifyOtp('')
-                    }, 3000)
+                    }, 5000)
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
