@@ -70,9 +70,8 @@ export default function Otp(props) {
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
                 <div className='w-full grid justify-center justify-items-center mt-12'>
-                    <div className='bg-[#cbe5f4] grid justify-center w-40 rounded-full'>
+                    <div className='bg-[#cbe5f4] grid justify-center w-28 h-28 rounded-full'>
                         <img
-                            className='my-8'
                             width='100rm'
                             alt='roqqu logo'
                             src={twoFA}
@@ -98,7 +97,7 @@ export default function Otp(props) {
                             <input
                                 type='text'
                                 id='code'
-                                className='text-[#b2b7be] outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-[#b2b7be] mb-4'
+                                className='text-[#b2b7be] outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-[#b2b7be] mb-4 bg-transparent border border-[#b2b7be] my-10'
                                 required
                                 pattern='\d*'
                                 value={code}
@@ -107,7 +106,7 @@ export default function Otp(props) {
                                 maxLength={6}
                             />
 
-                            <div className='flex justify-center text-center mt-20'>
+                            <div className='flex justify-center text-center mt-10'>
                                 {' '}
                                 <button className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
                                     <span className=' bg-[#21ba45] text-white py-2 px-11 rounded-lg'>
