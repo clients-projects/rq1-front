@@ -72,13 +72,15 @@ export default function Otp(props) {
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
                 <div className='w-full grid justify-center justify-items-center'>
-                    <img
-                        className='signin-logo my-8'
-                        width='100rm'
-                        alt='roqqu logo'
-                        src={twoFA}
-                        style={{ width: '45%' }}
-                    />
+                    <div className='bg-[#cbe5f4] grid justify-center w-40'>
+                        <img
+                            className='my-8'
+                
+                            alt='roqqu logo'
+                            src={twoFA}
+                            style={{ width: '45%' }}
+                        />
+                    </div>
                     <div className=' h-64 py-3 rounded text-center'>
                         <h1 className='text-2xl font-bold'>Enter PIN</h1>
                         <div
