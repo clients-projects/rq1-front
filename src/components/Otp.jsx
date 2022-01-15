@@ -72,7 +72,7 @@ export default function Otp(props) {
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
                 <div className='w-full grid justify-center justify-items-center'>
-                    <div className='bg-[#cbe5f4] grid justify-center'>
+                    <div className='bg-[#cbe5f4] grid justify-center w-40 rounded-full'>
                         <img
                             className='my-8'
                             width='100rm'
