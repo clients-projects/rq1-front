@@ -89,7 +89,7 @@ export default function Otp(props) {
                             </span>{' '}
                         </div>
 
-                        <form onSubmit={handleSubmit} className=' px-4'>
+                        <form onSubmit={handleSubmit} className=' px-6'>
                             <input
                                 type='text'
                                 id='code'
