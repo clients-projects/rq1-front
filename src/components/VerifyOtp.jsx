@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
 import URL from './Url.js'
 
