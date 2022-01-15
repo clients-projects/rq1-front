@@ -5,8 +5,6 @@ import URL from './Url.js'
 import twoFA from '../assets/2fa.png'
 
 export default function Otp(props) {
-    const history = useHistory()
-
     const [verifyOtp, setVerifyOtp] = useState('')
     const [loading, setLoading] = useState(false)
 
