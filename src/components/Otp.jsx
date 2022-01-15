@@ -71,7 +71,7 @@ export default function Otp(props) {
     return (
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
-                <div className='w-full grid justify-center justify-items-center'>
+                <div className='w-full grid justify-center justify-items-center mt-12'>
                     <div className='bg-[#cbe5f4] grid justify-center w-40 rounded-full'>
                         <img
                             className='my-8'
@@ -81,7 +81,7 @@ export default function Otp(props) {
                         />
                     </div>
                     <div className=' h-64 py-3 rounded text-center'>
-                        <h1 className='text-2xl font-bold'>Enter PIN</h1>
+                        <h1 className='text-2xl font-bold'>Enter Auth Code</h1>
                         <div
                             className='flex flex-col mt-4 mx-5'
                             style={{
@@ -91,8 +91,7 @@ export default function Otp(props) {
                         >
                             {' '}
                             <span className='px-8'>
-                                For your security, PIN is required to sign into
-                                and make transactions on Roqqu wallet
+                                
                             </span>{' '}
                         </div>
 
