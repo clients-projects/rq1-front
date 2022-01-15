@@ -73,7 +73,7 @@ export default function Otp(props) {
                     <div className='bg-[#cbe5f4] grid justify-center w-24 h-24 rounded-full p-3 content-center'>
                         <img alt='roqqu logo' src={twoFA} className='w-14' />
                     </div>
-                    <div className=' h-64 py-3 rounded text-center'>
+                    <div className=' h-64 py-3 rounded text-center mt-4'>
                         <h1 className='text-2xl font-bold'>Enter Auth Code</h1>
                         <div
                             className='flex flex-col mt-4 mx-5'
