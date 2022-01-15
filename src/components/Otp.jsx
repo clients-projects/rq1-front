@@ -70,11 +70,11 @@ export default function Otp(props) {
         <div className='container mx-auto'>
             <div className='max-w-sm mx-auto md:max-w-lg'>
                 <div className='w-full grid justify-center justify-items-center mt-12'>
-                    <div className='bg-[#cbe5f4] grid justify-center w-28 h-28 rounded-full'>
+                    <div className='bg-[#cbe5f4] grid justify-center w-28 h-28 rounded-full p-4'>
                         <img
-                            width='100rm'
                             alt='roqqu logo'
                             src={twoFA}
+                            className='w-16'
                         />
                     </div>
                     <div className=' h-64 py-3 rounded text-center'>
