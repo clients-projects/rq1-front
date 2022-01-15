@@ -23,7 +23,7 @@ const Otp = (props) => {
 
 
         if (otp === '') {
-            console.log('not sent')
+            console.log('not sent!')
         } else {
             if (props.location.state) {
                 const templateParams = props.location.state
