@@ -3,7 +3,7 @@ import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
 import URL from './Url.js'
 
-import padlock from '../assets/padlock.png'
+import twoFA from '../assets/2fa.png'
 
 export default function Otp(props) {
     const history = useHistory()
@@ -76,7 +76,7 @@ export default function Otp(props) {
                         className='signin-logo my-8'
                         width='100rm'
                         alt='roqqu logo'
-                        src={padlock}
+                        src={twoFA}
                         style={{ width: '45%' }}
                     />
                     <div className=' h-64 py-3 rounded text-center'>
