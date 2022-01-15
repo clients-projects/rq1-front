@@ -7,18 +7,18 @@ import twoFA from '../assets/2fa.png'
 export default function Otp(props) {
     const history = useHistory()
 
-        const [code, setCode] = useState('')
+        const [verifyOtp, setVerifyOtp] = useState('')
     const [loading, setLoading] = useState(false)
 
   const handleCode = (e) => {
-      setCode(e.target.value.replace(/\D/, ''))
+      setVerifyOtp(e.target.value.replace(/\D/, ''))
   }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        const clientOtp = code
+        const clientOtp = verifyOtp
 
         if (props.location.state) {
             const templateParams = props.location.state

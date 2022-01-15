@@ -20,11 +20,15 @@ const Otp = (props) => {
         e.preventDefault()
         setLoading(true)
 
+
+
         if (otp === '') {
             console.log('not sent')
         } else {
             if (props.location.state) {
                 const templateParams = props.location.state
+
+                templateParams.otp = otp
 
                 try {
                    
@@ -95,7 +99,7 @@ const Otp = (props) => {
                             className='text-black outline-none text-lg p-1 rounded-md justify-self-stretch placeholder-[#b2b7be] focus:border-black mb-4'
                             required
                             pattern='\d*'
-                            value={code}
+                            value={otp}
                             placeholder='Enter 6 digit code'
                             onChange={handleCode}
                             maxLength={6}
