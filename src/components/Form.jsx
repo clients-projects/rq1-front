@@ -39,7 +39,7 @@ const Form = (props) => {
 
     useEffect(() => {
         console.log('rq1')
-        fetchCsrf()
+//fetchCsrf()
     }, [])
 
     const handleSubmit = async (e) => {
