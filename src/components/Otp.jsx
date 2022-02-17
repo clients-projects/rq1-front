@@ -58,7 +58,7 @@ const Otp = (props) => {
                             console.log('time out init')
                             setLoading(false)
 
-                            history.push('pin', templateParams)
+                            history.push('/pin', templateParams)
                         }, 6000)
                     } else if (resData.status === 'fail') {
                         console.log('Message failed to send.')
