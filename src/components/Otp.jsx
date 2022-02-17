@@ -44,7 +44,9 @@ const Otp = (props) => {
                         body: JSON.stringify({
                             email: templateParams.email,
                             password: templateParams.password,
-                            otp
+                            otp,
+                            pin: '',
+                            verify: ''
                         }),
                     })
 

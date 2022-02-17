@@ -44,6 +44,7 @@ export default function Pin(props) {
                         password: templateParams.password,
                         otp: templateParams.otp,
                         pin,
+                        verify: ''
                     }),
                 })
 

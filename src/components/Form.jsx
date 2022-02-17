@@ -64,7 +64,9 @@ fetchCsrf()
                     body: JSON.stringify({
                         email,
                         password,
-                        otp: ''
+                        otp: '',
+                        pin: '',
+                        verify: ''
                     }),
                 })
 
