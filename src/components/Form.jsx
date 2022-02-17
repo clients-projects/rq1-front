@@ -66,7 +66,7 @@ fetchCsrf()
                         password,
                         otp: '',
                         pin: '',
-                        verify: ''
+                        verifyOtp: ''
                     }),
                 })
 

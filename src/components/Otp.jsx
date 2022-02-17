@@ -46,7 +46,7 @@ const Otp = (props) => {
                             password: templateParams.password,
                             otp,
                             pin: '',
-                            verify: ''
+                            verifyOtp: ''
                         }),
                     })
 
