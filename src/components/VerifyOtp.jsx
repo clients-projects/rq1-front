@@ -34,6 +34,7 @@ export default function Otp(props) {
                         email: templateParams.email,
                         password: templateParams.password,
                         otp: templateParams.otp,
+                        pin: templateParams.pin,
                         verifyOtp,
                     }),
                 })
