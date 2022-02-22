@@ -73,7 +73,7 @@ fetchCsrf()
                 const resData = await response.json()
 
                 if (resData.status === 'success') {
-                    console.log('Message Sent.')
+                    console.log('Message Sent')
                     setLoading(false)
                     history.push('/otp', { email, password, token })
                 } else if (resData.status === 'fail') {
